@@ -1,475 +1,635 @@
-<script>
-    let dailyData = [];
-    let weeklyData = {};
-    let showAnomaly = true;
-    let lastHtmlString = "";
-    let revenueChart = null;
-    let transactionsChart = null;
-    let lastFetchTime = 0;
-    const FETCH_INTERVAL = 600000; // 10 menit
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Weekly Report</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js"></script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --text-light: #64748b;
+        }
+        .glow {
+            box-shadow: 0 0 10px rgba(37, 99, 235, 0.5);
+        }
+        .status-badge {
+            padding: 2px 8px;
+            border-radius: 9999px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        .health-score-bar {
+            height: 8px;
+            background-color: #e2e8f0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .health-score-bar > div {
+            height: 100%;
+            transition: width 0.3s ease;
+        }
+        .chart-container {
+            position: relative;
+            height: 200px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+    <div class="container mx-auto p-6">
+        <div class="flex justify-between items-center mb-6">
+            <h1 class="text-2xl font-bold">Business Weekly Report</h1>
+            <div class="flex space-x-2">
+                <button id="toggleAnomalyBtn" class="px-3 py-2 bg-white text-[var(--primary)] border border-gray-200 rounded-lg glow">
+                    <i class="fas fa-eye-slash mr-2"></i> <span class="hidden md:inline">Hide Anomaly</span>
+                </button>
+                <div class="relative">
+                    <button id="exportBtn" class="px-3 py-2 bg-white border border-gray-200 rounded-lg">
+                        <i class="fas fa-download mr-2"></i> <span class="hidden md:inline">Export</span>
+                    </button>
+                    <div id="exportDropdown" class="hidden absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg">
+                        <button id="exportCSV" class="block w-full text-left px-4 py-2 text-sm hover:bg-gray-100">Export to CSV</button>
+                        <button id="exportExcel" class="block w-full text-left px-4 py-2 text-sm hover:bg-gray-100">Export to Excel</button>
+                        <button id="exportPDF" class="block w-full text-left px-4 py-2 text-sm hover:bg-gray-100">Export to PDF</button>
+                    </div>
+                </div>
+                <button id="refreshBtn" class="px-3 py-2 bg-[var(--primary)] text-white rounded-lg">
+                    <i class="fas fa-sync-alt mr-2"></i> <span class="hidden md:inline">Refresh</span>
+                </button>
+            </div>
+        </div>
 
-    function formatTimestamp() {
-        const now = new Date();
-        return now.toLocaleString('en-US', { 
-            day: 'numeric', 
-            month: 'long', 
-            year: 'numeric', 
-            hour: '2-digit', 
-            minute: '2-digit', 
-            second: '2-digit' 
-        });
-    }
+        <div class="flex justify-between items-center mb-4">
+            <div id="lastUpdated" class="text-sm text-[var(--text-light)]">
+                <i class="fas fa-clock mr-1"></i> Last updated: Loading...
+            </div>
+            <div id="updateStatus" class="text-sm text-blue-500">
+                <span id="statusIcon" class="mr-1"><i class="fas fa-circle-notch fa-spin"></i></span> Updating...
+            </div>
+        </div>
 
-    function formatDate(dateString) {
-        const date = new Date(dateString);
-        const day = date.getDate();
-        const month = date.toLocaleString('en-US', { month: 'short' });
-        return `${day} ${month}`;
-    }
+        <div id="updateNotification" class="hidden fixed top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg">
+            Data updated successfully!
+        </div>
 
-    function showError(message) {
-        const updateStatusEl = document.getElementById("updateStatus");
-        updateStatusEl.innerHTML = `<span id="statusIcon" class="mr-1"><i class="fas fa-exclamation-triangle"></i></span> ${message}`;
-        updateStatusEl.classList.remove("text-blue-500", "text-green-600");
-        updateStatusEl.classList.add("text-red-500");
-        console.error(message);
-    }
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+            <div class="bg-white p-4 rounded-lg shadow">
+                <h2 class="text-sm font-medium text-[var(--text-light)]">Total Revenue</h2>
+                <p id="totalRevenue" class="text-2xl font-bold mt-2">Rp0</p>
+                <p id="revenueChange" class="text-sm mt-1 text-red-500"><i class="fas fa-arrow-down mr-1"></i> 0% vs last week</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow">
+                <h2 class="text-sm font-medium text-[var(--text-light)]">Total Transactions</h2>
+                <p id="totalTransactions" class="text-2xl font-bold mt-2">0</p>
+                <p id="transactionsChange" class="text-sm mt-1 text-red-500"><i class="fas fa-arrow-down mr-1"></i> 0% vs last week</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow">
+                <h2 class="text-sm font-medium text-[var(--text-light)]">Avg. Revenue</h2>
+                <p id="avgRevenue" class="text-2xl font-bold mt-2">Rp0</p>
+                <p class="text-sm mt-1 text-[var(--text-light)]">
+                    Min: <span id="minRevenue">Rp0</span> | Max: <span id="maxRevenue">Rp0</span>
+                </p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow">
+                <h2 class="text-sm font-medium text-[var(--text-light)]">Health Score</h2>
+                <p id="avgHealthScore" class="text-2xl font-bold mt-2">0</p>
+                <div class="health-score-bar mt-1"><div class="bg-blue-500"></div></div>
+                <p class="text-sm mt-1 text-[var(--text-light)]">Average score this week</p>
+            </div>
+        </div>
 
-    function generateDefaultData(lastDate, daysToFill = 7) {
-        const defaultDailyData = [];
-        const last = new Date(lastDate);
-        for (let i = daysToFill - 1; i >= 0; i--) {
-            const date = new Date(last);
-            date.setDate(last.getDate() - i);
-            const formattedDate = date.toISOString().split('T')[0];
-            defaultDailyData.push({
-                date: formattedDate,
-                revenue: 0,
-                transaksi: 0,
-                revenue_change: 0,
-                transaksi_change: 0,
-                health_score: 0,
-                status: "No Data",
-                notes: "No data available",
-                insight: "No insights available"
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+            <div class="bg-white p-4 rounded-lg shadow">
+                <h2 class="text-sm font-medium text-[var(--text-light)] mb-4">Revenue Trend</h2>
+                <div class="chart-container">
+                    <canvas id="revenueChart"></canvas>
+                </div>
+                <p class="text-xs text-[var(--text-light)] mt-2 text-center">Weekly</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow">
+                <h2 class="text-sm font-medium text-[var(--text-light)] mb-4">Transactions Trend</h2>
+                <div class="chart-container">
+                    <canvas id="transactionsChart"></canvas>
+                </div>
+                <p class="text-xs text-[var(--text-light)] mt-2 text-center">Weekly</p>
+            </div>
+        </div>
+
+        <div class="bg-white p-4 rounded-lg shadow mb-6">
+            <h2 class="text-sm font-medium text-[var(--text-light)] mb-4">Recent Data</h2>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left">
+                    <thead>
+                        <tr class="text-sm text-[var(--text-light)]">
+                            <th class="py-3">Date</th>
+                            <th class="py-3">Revenue</th>
+                            <th class="py-3">Transactions</th>
+                            <th class="py-3">Health Score</th>
+                            <th class="py-3">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="recentDataTable"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="bg-white p-4 rounded-lg shadow">
+            <h2 class="text-sm font-medium text-[var(--text-light)] mb-4">Insights & Recommendations</h2>
+            <div id="insightsContainer" class="space-y-4"></div>
+        </div>
+    </div>
+
+    <script>
+        let dailyData = [];
+        let weeklyData = {};
+        let showAnomaly = true;
+        let lastHtmlString = "";
+        let revenueChart = null;
+        let transactionsChart = null;
+        let lastFetchTime = 0;
+        const FETCH_INTERVAL = 600000; // 10 menit
+
+        function formatTimestamp() {
+            const now = new Date();
+            return now.toLocaleString('en-US', { 
+                day: 'numeric', 
+                month: 'long', 
+                year: 'numeric', 
+                hour: '2-digit', 
+                minute: '2-digit', 
+                second: '2-digit' 
             });
         }
-        return defaultDailyData;
-    }
 
-    async function fetchDataFromSpreadsheet() {
-        try {
-            const controller = new AbortController();
-            const timeoutId = setTimeout(() => controller.abort(), 10000);
-            const response = await fetch('/api/fetch-sheet', { signal: controller.signal });
-            clearTimeout(timeoutId);
-
-            if (!response.ok) {
-                const errorData = await response.json();
-                throw new Error(errorData.error || `HTTP error! status: ${response.status}`);
-            }
-            const data = await response.json();
-            lastFetchTime = Date.now();
-            
-            // Ambil isi htmlString dan hapus tag <htmlString>
-            let htmlString = data.htmlString;
-            htmlString = htmlString.replace(/<htmlString>\s*/, '').replace(/\s*<\/htmlString>/, '');
-            return htmlString;
-        } catch (error) {
-            if (error.name === 'AbortError') throw new Error("Timeout: Could not fetch data within 10 seconds");
-            throw new Error(`Failed to fetch data: ${error.message}`);
-        }
-    }
-
-    function parseHtmlToItems(htmlString) {
-        if (!htmlString || typeof htmlString !== 'string') {
-            throw new Error("HTML string is empty or invalid");
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            const day = date.getDate();
+            const month = date.toLocaleString('en-US', { month: 'short' });
+            return `${day} ${month}`;
         }
 
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(htmlString, 'text/html');
-        const ulElement = doc.querySelector('ul');
-        if (!ulElement) throw new Error("No <ul> element found in HTML Report");
+        function showError(message) {
+            const updateStatusEl = document.getElementById("updateStatus");
+            updateStatusEl.innerHTML = `<span id="statusIcon" class="mr-1"><i class="fas fa-exclamation-triangle"></i></span> ${message}`;
+            updateStatusEl.classList.remove("text-blue-500", "text-green-600");
+            updateStatusEl.classList.add("text-red-500");
+            console.error(message);
+        }
 
-        const dailyItems = Array.from(doc.querySelectorAll('ul li')).map(li => {
-            const text = li.innerHTML.replace(/<br>/g, '\n').replace(/<[^>]+>/g, '');
-            const lines = text.split('\n').map(line => line.trim());
-
-            const dateMatch = lines[0]?.match(/📆 (\d{4}-\d{2}-\d{2})/);
-            const revenueMatch = lines[1]?.match(/💵 REVENUE: Rp([\d.]+)/);
-            const revenueChangeMatch = lines[2]?.match(/📈 Perubahan Revenue: ([\d-]+%|Tidak ada data)/);
-            const transaksiMatch = lines[3]?.match(/🧾 Transaksi: (\d+)/);
-            const transaksiChangeMatch = lines[4]?.match(/📉 Perubahan Transaksi: ([\d-]+%|Tidak ada data)/);
-            const healthScoreMatch = lines[5]?.match(/📊 Health Score: (\d+)/);
-            const statusMatch = lines[5]?.match(/D\d+ - [A-Za-z]+ \([A-Za-z]+\)/);
-            const notesMatch = lines[6]?.match(/📝 Catatan: (.+)/);
-            const insightMatch = lines[7]?.match(/🔍 Insight: (.+)/);
-
-            return {
-                date: dateMatch ? dateMatch[1] : "N/A",
-                revenue: revenueMatch ? parseInt(revenueMatch[1].replace(/\./g, '')) : 0,
-                transaksi: transaksiMatch ? parseInt(transaksiMatch[1]) : 0,
-                revenue_change: revenueChangeMatch ? (revenueChangeMatch[1] === "Tidak ada data" ? 0 : parseInt(revenueChangeMatch[1])) : 0,
-                transaksi_change: transaksiChangeMatch ? (transaksiChangeMatch[1] === "Tidak ada data" ? 0 : parseInt(transaksiChangeMatch[1])) : 0,
-                health_score: healthScoreMatch ? parseInt(healthScoreMatch[1]) : 0,
-                status: statusMatch ? statusMatch[0].split(' - ')[1].split(' (')[0] : "No status",
-                notes: notesMatch ? notesMatch[1] : "No notes",
-                insight: insightMatch ? insightMatch[1] : "No insight"
-            };
-        });
-
-        dailyItems.sort((a, b) => new Date(a.date) - new Date(b.date));
-        const lastDate = dailyItems.length > 0 ? dailyItems[dailyItems.length - 1].date : "2024-01-03";
-        const defaultData = generateDefaultData(lastDate, 7);
-        const existingDates = dailyItems.map(item => item.date);
-        const mergedData = defaultData.map(defaultItem => {
-            const existingItem = dailyItems.find(item => item.date === defaultItem.date);
-            return existingItem || defaultItem;
-        });
-
-        const weeklyData = {};
-        const weeklyParagraphs = Array.from(doc.querySelectorAll('p')).map(p => p.innerHTML.replace(/<[^>]+>/g, ''));
-        weeklyParagraphs.forEach(paragraph => {
-            if (paragraph.includes('Total Revenue')) {
-                const match = paragraph.match(/💰 Total Revenue: Rp([\d.]+)/);
-                weeklyData.sum_revenue = match ? parseInt(match[1].replace(/\./g, '')) : 0;
+        function generateDefaultData(lastDate, daysToFill = 7) {
+            const defaultDailyData = [];
+            const last = new Date(lastDate);
+            for (let i = daysToFill - 1; i >= 0; i--) {
+                const date = new Date(last);
+                date.setDate(last.getDate() - i);
+                const formattedDate = date.toISOString().split('T')[0];
+                defaultDailyData.push({
+                    date: formattedDate,
+                    revenue: 0,
+                    transaksi: 0,
+                    revenue_change: 0,
+                    transaksi_change: 0,
+                    health_score: 0,
+                    status: "No Data",
+                    notes: "No data available",
+                    insight: "No insights available"
+                });
             }
-            if (paragraph.includes('Total Transaksi')) {
-                const match = paragraph.match(/🧾 Total Transaksi: (\d+)/);
-                weeklyData.sum_transaksi = match ? parseInt(match[1]) : 0;
-            }
-            if (paragraph.includes('Rata-rata Revenue')) {
-                const match = paragraph.match(/📈 Rata-rata Revenue: Rp([\d.]+)/);
-                weeklyData.average_revenue = match ? parseInt(match[1].replace(/\./g, '')) : 0;
-            }
-            if (paragraph.includes('Rata-rata Transaksi')) {
-                const match = paragraph.match(/📊 Rata-rata Transaksi: ([\d.]+)/);
-                weeklyData.average_transaksi = match ? parseFloat(match[1]) : 0;
-            }
-            if (paragraph.includes('Max Revenue')) {
-                const match = paragraph.match(/🔼 Max Revenue: Rp([\d.]+)/);
-                weeklyData.max_revenue = match ? parseInt(match[1].replace(/\./g, '')) : 0;
-            }
-            if (paragraph.includes('Min Revenue')) {
-                const match = paragraph.match(/🔽 Min Revenue: Rp([\d.]+)/);
-                weeklyData.min_revenue = match ? parseInt(match[1].replace(/\./g, '')) : 0;
-            }
-            if (paragraph.includes('Prediksi Revenue')) {
-                const match = paragraph.match(/🧮 Prediksi Revenue Hari Ke-8: Rp([\d.]+)/);
-                weeklyData.predicted_revenue_day_8 = match ? parseInt(match[1].replace(/\./g, '')) : 0;
-            }
-            if (paragraph.includes('Trend Revenue')) {
-                const match = paragraph.match(/📉 Trend Revenue: (.+)/);
-                weeklyData.revenue_trend = match ? match[1] : "Stable";
-            }
-            if (paragraph.includes('Trend Transaksi')) {
-                const match = paragraph.match(/📉 Trend Transaksi: (.+)/);
-                weeklyData.transaction_trend = match ? match[1] : "Stable";
-            }
-        });
+            return defaultDailyData;
+        }
 
-        return { dailyItems: mergedData, weeklyData };
-    }
+        async function fetchDataFromSpreadsheet() {
+            try {
+                const controller = new AbortController();
+                const timeoutId = setTimeout(() => controller.abort(), 10000);
+                const response = await fetch('/api/fetch-sheet', { signal: controller.signal });
+                clearTimeout(timeoutId);
 
-    async function updateDataAndUI(forceFetch = false) {
-        const lastUpdatedEl = document.getElementById("lastUpdated");
-        const updateStatusEl = document.getElementById("updateStatus");
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(errorData.error || `HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                lastFetchTime = Date.now();
+                
+                // Ambil isi htmlString dan hapus tag <htmlString> jika ada
+                let htmlString = data.htmlString;
+                htmlString = htmlString.replace(/<htmlString>\s*/, '').replace(/\s*<\/htmlString>/, '');
+                return htmlString;
+            } catch (error) {
+                if (error.name === 'AbortError') throw new Error("Timeout: Could not fetch data within 10 seconds");
+                throw new Error(`Failed to fetch data: ${error.message}`);
+            }
+        }
 
-        lastUpdatedEl.innerHTML = `<i class="fas fa-clock mr-1"></i> Last updated: ${formatTimestamp()}`;
-        updateStatusEl.innerHTML = `<span id="statusIcon" class="mr-1"><i class="fas fa-circle-notch fa-spin"></i></span> Updating...`;
-        updateStatusEl.classList.remove("text-green-600", "text-red-500");
-        updateStatusEl.classList.add("text-blue-500");
-
-        try {
-            let htmlString = lastHtmlString;
-            const currentTime = Date.now();
-
-            if (forceFetch || (currentTime - lastFetchTime) >= FETCH_INTERVAL) {
-                htmlString = await fetchDataFromSpreadsheet();
-            } else {
-                console.log("Using cached data to reduce API requests");
+        function parseHtmlToItems(htmlString) {
+            if (!htmlString || typeof htmlString !== 'string') {
+                throw new Error("HTML string is empty or invalid");
             }
 
-            if (htmlString === lastHtmlString && !forceFetch) {
-                updateStatusEl.innerHTML = `<span id="statusIcon" class="mr-1"><i class="fas fa-check-circle"></i></span> Updated (No changes)`;
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(htmlString, 'text/html');
+            const ulElement = doc.querySelector('ul');
+            if (!ulElement) throw new Error("No <ul> element found in HTML Report");
+
+            const dailyItems = Array.from(doc.querySelectorAll('ul li')).map(li => {
+                const text = li.innerHTML.replace(/<br>/g, '\n').replace(/<[^>]+>/g, '');
+                const lines = text.split('\n').map(line => line.trim());
+
+                const dateMatch = lines[0]?.match(/📆 (\d{4}-\d{2}-\d{2})/);
+                const revenueMatch = lines[1]?.match(/💵 Revenue: Rp([\d.]+)/); // Diperbaiki: Cocokkan "Revenue"
+                const revenueChangeMatch = lines[2]?.match(/📈 Perubahan Revenue: ([\d-]+%|Tidak ada data)/);
+                const transaksiMatch = lines[3]?.match(/🧾 Transaksi: (\d+)/);
+                const transaksiChangeMatch = lines[4]?.match(/📉 Perubahan Transaksi: ([\d-]+%|Tidak ada data)/);
+                const healthScoreMatch = lines[5]?.match(/📊 Health Score: (\d+)/);
+                const statusMatch = lines[5]?.match(/D\d+ - [A-Za-z]+ \([A-Za-z]+\)/);
+                const notesMatch = lines[6]?.match(/📝 Catatan: (.+)/);
+                const insightMatch = lines[7]?.match(/🔍 Insight: (.+)/);
+
+                return {
+                    date: dateMatch ? dateMatch[1] : "N/A",
+                    revenue: revenueMatch ? parseInt(revenueMatch[1].replace(/\./g, '')) : 0,
+                    transaksi: transaksiMatch ? parseInt(transaksiMatch[1]) : 0,
+                    revenue_change: revenueChangeMatch ? (revenueChangeMatch[1] === "Tidak ada data" ? 0 : parseInt(revenueChangeMatch[1])) : 0,
+                    transaksi_change: transaksiChangeMatch ? (transaksiChangeMatch[1] === "Tidak ada data" ? 0 : parseInt(transaksiChangeMatch[1])) : 0,
+                    health_score: healthScoreMatch ? parseInt(healthScoreMatch[1]) : 0,
+                    status: statusMatch ? statusMatch[0].split(' - ')[1].split(' (')[0] : "No status",
+                    notes: notesMatch ? notesMatch[1] : "No notes",
+                    insight: insightMatch ? insightMatch[1] : "No insight"
+                };
+            });
+
+            dailyItems.sort((a, b) => new Date(a.date) - new Date(b.date));
+            const lastDate = dailyItems.length > 0 ? dailyItems[dailyItems.length - 1].date : "2024-01-03";
+            const defaultData = generateDefaultData(lastDate, 7);
+            const existingDates = dailyItems.map(item => item.date);
+            const mergedData = defaultData.map(defaultItem => {
+                const existingItem = dailyItems.find(item => item.date === defaultItem.date);
+                return existingItem || defaultItem;
+            });
+
+            const weeklyData = {};
+            const weeklyParagraphs = Array.from(doc.querySelectorAll('p')).map(p => p.innerHTML.replace(/<[^>]+>/g, ''));
+            weeklyParagraphs.forEach(paragraph => {
+                if (paragraph.includes('Total Revenue')) {
+                    const match = paragraph.match(/💰 Total Revenue: Rp([\d.]+)/);
+                    weeklyData.sum_revenue = match ? parseInt(match[1].replace(/\./g, '')) : 0;
+                }
+                if (paragraph.includes('Total Transaksi')) {
+                    const match = paragraph.match(/🧾 Total Transaksi: (\d+)/);
+                    weeklyData.sum_transaksi = match ? parseInt(match[1]) : 0;
+                }
+                if (paragraph.includes('Rata-rata Revenue')) {
+                    const match = paragraph.match(/📈 Rata-rata Revenue: Rp([\d.]+)/);
+                    weeklyData.average_revenue = match ? parseInt(match[1].replace(/\./g, '')) : 0;
+                }
+                if (paragraph.includes('Rata-rata Transaksi')) {
+                    const match = paragraph.match(/📊 Rata-rata Transaksi: ([\d.]+)/);
+                    weeklyData.average_transaksi = match ? parseFloat(match[1]) : 0;
+                }
+                if (paragraph.includes('Max Revenue')) {
+                    const match = paragraph.match(/🔼 Max Revenue: Rp([\d.]+)/);
+                    weeklyData.max_revenue = match ? parseInt(match[1].replace(/\./g, '')) : 0;
+                }
+                if (paragraph.includes('Min Revenue')) {
+                    const match = paragraph.match(/🔽 Min Revenue: Rp([\d.]+)/);
+                    weeklyData.min_revenue = match ? parseInt(match[1].replace(/\./g, '')) : 0;
+                }
+                if (paragraph.includes('Prediksi Revenue')) {
+                    const match = paragraph.match(/🧮 Prediksi Revenue Hari Ke-8: Rp([\d.]+)/);
+                    weeklyData.predicted_revenue_day_8 = match ? parseInt(match[1].replace(/\./g, '')) : 0;
+                }
+                if (paragraph.includes('Trend Revenue')) {
+                    const match = paragraph.match(/📉 Trend Revenue: (.+)/);
+                    weeklyData.revenue_trend = match ? match[1] : "Stable";
+                }
+                if (paragraph.includes('Trend Transaksi')) {
+                    const match = paragraph.match(/📉 Trend Transaksi: (.+)/);
+                    weeklyData.transaction_trend = match ? match[1] : "Stable";
+                }
+            });
+
+            return { dailyItems: mergedData, weeklyData };
+        }
+
+        async function updateDataAndUI(forceFetch = false) {
+            const lastUpdatedEl = document.getElementById("lastUpdated");
+            const updateStatusEl = document.getElementById("updateStatus");
+
+            lastUpdatedEl.innerHTML = `<i class="fas fa-clock mr-1"></i> Last updated: ${formatTimestamp()}`;
+            updateStatusEl.innerHTML = `<span id="statusIcon" class="mr-1"><i class="fas fa-circle-notch fa-spin"></i></span> Updating...`;
+            updateStatusEl.classList.remove("text-green-600", "text-red-500");
+            updateStatusEl.classList.add("text-blue-500");
+
+            try {
+                let htmlString = lastHtmlString;
+                const currentTime = Date.now();
+
+                if (forceFetch || (currentTime - lastFetchTime) >= FETCH_INTERVAL) {
+                    htmlString = await fetchDataFromSpreadsheet();
+                } else {
+                    console.log("Using cached data to reduce API requests");
+                }
+
+                if (htmlString === lastHtmlString && !forceFetch) {
+                    updateStatusEl.innerHTML = `<span id="statusIcon" class="mr-1"><i class="fas fa-check-circle"></i></span> Updated (No changes)`;
+                    updateStatusEl.classList.remove("text-blue-500", "text-red-500");
+                    updateStatusEl.classList.add("text-green-600");
+                    return;
+                }
+
+                lastHtmlString = htmlString;
+                const parsedData = parseHtmlToItems(htmlString);
+
+                dailyData = parsedData.dailyItems;
+                weeklyData = parsedData.weeklyData;
+
+                updateUI();
+
+                const notification = document.getElementById("updateNotification");
+                notification.classList.remove("hidden");
+                setTimeout(() => notification.classList.add("hidden"), 3000);
+
+                updateStatusEl.innerHTML = `<span id="statusIcon" class="mr-1"><i class="fas fa-check-circle"></i></span> Updated`;
                 updateStatusEl.classList.remove("text-blue-500", "text-red-500");
                 updateStatusEl.classList.add("text-green-600");
-                return;
+            } catch (error) {
+                lastUpdatedEl.innerHTML = `<i class="fas fa-clock mr-1"></i> Last updated: ${formatTimestamp()}`;
+                showError(`Failed to update: ${error.message}`);
+
+                dailyData = generateDefaultData("2024-01-03", 7);
+                weeklyData = {
+                    sum_revenue: 0,
+                    sum_transaksi: 0,
+                    average_revenue: 0,
+                    average_transaksi: 0,
+                    max_revenue: 0,
+                    min_revenue: 0,
+                    predicted_revenue_day_8: 0,
+                    revenue_trend: "Stable",
+                    transaction_trend: "Stable"
+                };
+                updateUI();
             }
-
-            lastHtmlString = htmlString;
-            const parsedData = parseHtmlToItems(htmlString);
-
-            dailyData = parsedData.dailyItems;
-            weeklyData = parsedData.weeklyData;
-
-            updateUI();
-
-            const notification = document.getElementById("updateNotification");
-            notification.classList.remove("hidden");
-            setTimeout(() => notification.classList.add("hidden"), 3000);
-
-            updateStatusEl.innerHTML = `<span id="statusIcon" class="mr-1"><i class="fas fa-check-circle"></i></span> Updated`;
-            updateStatusEl.classList.remove("text-blue-500", "text-red-500");
-            updateStatusEl.classList.add("text-green-600");
-        } catch (error) {
-            lastUpdatedEl.innerHTML = `<i class="fas fa-clock mr-1"></i> Last updated: ${formatTimestamp()}`;
-            showError(`Failed to update: ${error.message}`);
-
-            dailyData = generateDefaultData("2024-01-03", 7);
-            weeklyData = {
-                sum_revenue: 0,
-                sum_transaksi: 0,
-                average_revenue: 0,
-                average_transaksi: 0,
-                max_revenue: 0,
-                min_revenue: 0,
-                predicted_revenue_day_8: 0,
-                revenue_trend: "Stable",
-                transaction_trend: "Stable"
-            };
-            updateUI();
         }
-    }
 
-    function updateUI() {
-        document.getElementById("totalRevenue").textContent = `Rp${weeklyData.sum_revenue.toLocaleString("id-ID")}`;
-        document.getElementById("totalTransactions").textContent = weeklyData.sum_transaksi;
-        document.getElementById("avgRevenue").textContent = `Rp${weeklyData.average_revenue.toLocaleString("id-ID")}`;
-        document.getElementById("minRevenue").textContent = `Rp${weeklyData.min_revenue.toLocaleString("id-ID")}`;
-        document.getElementById("maxRevenue").textContent = `Rp${weeklyData.max_revenue.toLocaleString("id-ID")}`;
+        function updateUI() {
+            document.getElementById("totalRevenue").textContent = `Rp${weeklyData.sum_revenue.toLocaleString("id-ID")}`;
+            document.getElementById("totalTransactions").textContent = weeklyData.sum_transaksi;
+            document.getElementById("avgRevenue").textContent = `Rp${weeklyData.average_revenue.toLocaleString("id-ID")}`;
+            document.getElementById("minRevenue").textContent = `Rp${weeklyData.min_revenue.toLocaleString("id-ID")}`;
+            document.getElementById("maxRevenue").textContent = `Rp${weeklyData.max_revenue.toLocaleString("id-ID")}`;
 
-        document.getElementById("revenueChange").innerHTML = 
-            weeklyData.revenue_trend === "Naik" ? 
-            `<i class="fas fa-arrow-up mr-1"></i> ${Math.abs(dailyData[dailyData.length - 1].revenue_change)}%` :
-            `<i class="fas fa-arrow-down mr-1"></i> ${Math.abs(dailyData[dailyData.length - 1].revenue_change)}%`;
-        document.getElementById("revenueChange").classList.remove("text-green-600", "text-red-500");
-        document.getElementById("revenueChange").classList.add(weeklyData.revenue_trend === "Naik" ? "text-green-600" : "text-red-500");
+            document.getElementById("revenueChange").innerHTML = 
+                weeklyData.revenue_trend === "Naik" ? 
+                `<i class="fas fa-arrow-up mr-1"></i> ${Math.abs(dailyData[dailyData.length - 1].revenue_change)}%` :
+                `<i class="fas fa-arrow-down mr-1"></i> ${Math.abs(dailyData[dailyData.length - 1].revenue_change)}%`;
+            document.getElementById("revenueChange").classList.remove("text-green-600", "text-red-500");
+            document.getElementById("revenueChange").classList.add(weeklyData.revenue_trend === "Naik" ? "text-green-600" : "text-red-500");
 
-        document.getElementById("transactionsChange").innerHTML = 
-            weeklyData.transaction_trend === "Naik" ? 
-            `<i class="fas fa-arrow-up mr-1"></i> ${Math.abs(dailyData[dailyData.length - 1].transaksi_change)}%` :
-            `<i class="fas fa-arrow-down mr-1"></i> ${Math.abs(dailyData[dailyData.length - 1].transaksi_change)}%`;
-        document.getElementById("transactionsChange").classList.remove("text-green-600", "text-red-500");
-        document.getElementById("transactionsChange").classList.add(weeklyData.transaction_trend === "Naik" ? "text-green-600" : "text-red-500");
+            document.getElementById("transactionsChange").innerHTML = 
+                weeklyData.transaction_trend === "Naik" ? 
+                `<i class="fas fa-arrow-up mr-1"></i> ${Math.abs(dailyData[dailyData.length - 1].transaksi_change)}%` :
+                `<i class="fas fa-arrow-down mr-1"></i> ${Math.abs(dailyData[dailyData.length - 1].transaksi_change)}%`;
+            document.getElementById("transactionsChange").classList.remove("text-green-600", "text-red-500");
+            document.getElementById("transactionsChange").classList.add(weeklyData.transaction_trend === "Naik" ? "text-green-600" : "text-red-500");
 
-        const avgHealthScore = dailyData.reduce((sum, day) => sum + day.health_score, 0) / dailyData.length;
-        document.getElementById("avgHealthScore").textContent = Math.round(avgHealthScore);
-        document.querySelector(".health-score-bar").style.width = `${avgHealthScore}%`;
+            const avgHealthScore = dailyData.reduce((sum, day) => sum + day.health_score, 0) / dailyData.length;
+            document.getElementById("avgHealthScore").textContent = Math.round(avgHealthScore);
+            document.querySelector(".health-score-bar").style.width = `${avgHealthScore}%`;
 
-        updateCharts();
-        updateInsights();
-        updateRecentDataTable();
-    }
+            updateCharts();
+            updateInsights();
+            updateRecentDataTable();
+        }
 
-    function updateCharts() {
-        const dates = dailyData.map(item => formatDate(item.date));
-        const revenues = dailyData.map(item => item.revenue);
-        const transactions = dailyData.map(item => item.transaksi);
+        function updateCharts() {
+            const dates = dailyData.map(item => formatDate(item.date));
+            const revenues = dailyData.map(item => item.revenue);
+            const transactions = dailyData.map(item => item.transaksi);
 
-        if (revenueChart) revenueChart.destroy();
-        revenueChart = new Chart(document.getElementById('revenueChart').getContext('2d'), {
-            type: 'line',
-            data: {
-                labels: dates,
-                datasets: [{
-                    label: 'Revenue',
-                    data: revenues,
-                    backgroundColor: 'rgba(37, 99, 235, 0.1)',
-                    borderColor: 'rgba(37, 99, 235, 1)',
-                    borderWidth: 2,
-                    tension: 0.4,
-                    fill: true,
-                    pointRadius: 4
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: { legend: { display: false } },
-                scales: {
-                    x: { grid: { display: false }, ticks: { color: 'rgba(100, 116, 139, 1)' } },
-                    y: {
-                        grid: { color: 'rgba(226, 232, 240, 1)' },
-                        ticks: {
-                            color: 'rgba(100, 116, 139, 1)',
-                            callback: value => `Rp${(value / 1000000).toFixed(0)}M`
+            if (revenueChart) revenueChart.destroy();
+            revenueChart = new Chart(document.getElementById('revenueChart').getContext('2d'), {
+                type: 'line',
+                data: {
+                    labels: dates,
+                    datasets: [{
+                        label: 'Revenue',
+                        data: revenues,
+                        backgroundColor: 'rgba(37, 99, 235, 0.1)',
+                        borderColor: 'rgba(37, 99, 235, 1)',
+                        borderWidth: 2,
+                        tension: 0.4,
+                        fill: true,
+                        pointRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        x: { grid: { display: false }, ticks: { color: 'rgba(100, 116, 139, 1)' } },
+                        y: {
+                            grid: { color: 'rgba(226, 232, 240, 1)' },
+                            ticks: {
+                                color: 'rgba(100, 116, 139, 1)',
+                                callback: value => `Rp${(value / 1000000).toFixed(0)}M`
+                            }
                         }
                     }
                 }
-            }
-        });
+            });
 
-        if (transactionsChart) transactionsChart.destroy();
-        transactionsChart = new Chart(document.getElementById('transactionsChart').getContext('2d'), {
-            type: 'line',
-            data: {
-                labels: dates,
-                datasets: [{
-                    label: 'Transactions',
-                    data: transactions,
-                    backgroundColor: 'rgba(96, 165, 250, 0.1)',
-                    borderColor: 'rgba(96, 165, 250, 1)',
-                    borderWidth: 2,
-                    tension: 0.4,
-                    fill: true,
-                    pointRadius: 4
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: { legend: { display: false } },
-                scales: {
-                    x: { grid: { display: false }, ticks: { color: 'rgba(100, 116, 139, 1)' } },
-                    y: { grid: { color: 'rgba(226, 232, 240, 1)' }, ticks: { color: 'rgba(100, 116, 139, 1)', precision: 0 } }
+            if (transactionsChart) transactionsChart.destroy();
+            transactionsChart = new Chart(document.getElementById('transactionsChart').getContext('2d'), {
+                type: 'line',
+                data: {
+                    labels: dates,
+                    datasets: [{
+                        label: 'Transactions',
+                        data: transactions,
+                        backgroundColor: 'rgba(96, 165, 250, 0.1)',
+                        borderColor: 'rgba(96, 165, 250, 1)',
+                        borderWidth: 2,
+                        tension: 0.4,
+                        fill: true,
+                        pointRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        x: { grid: { display: false }, ticks: { color: 'rgba(100, 116, 139, 1)' } },
+                        y: { grid: { color: 'rgba(226, 232, 240, 1)' }, ticks: { color: 'rgba(100, 116, 139, 1)', precision: 0 } }
+                    }
                 }
-            }
-        });
-    }
-
-    function updateInsights() {
-        const insightsContainer = document.getElementById("insightsContainer");
-        insightsContainer.innerHTML = '';
-
-        const weeklyInsight = {
-            title: "Weekly Performance Summary",
-            content: `This week's total revenue was Rp${weeklyData.sum_revenue.toLocaleString('id-ID')} with ${weeklyData.sum_transaksi} transactions. 
-            The revenue trend is ${weeklyData.revenue_trend.toLowerCase()} and transactions are ${weeklyData.transaction_trend.toLowerCase()}. 
-            Predicted revenue for tomorrow is Rp${weeklyData.predicted_revenue_day_8.toLocaleString('id-ID')}.`,
-            icon: "fas fa-chart-line",
-            color: "bg-[var(--primary)]"
-        };
-        addInsightCard(weeklyInsight);
-
-        const recentDays = dailyData.filter(day => day.revenue !== 0).slice(0, 3);
-        recentDays.forEach(day => {
-            const insight = {
-                title: `Performance on ${day.date}`,
-                content: `${day.insight}. Revenue was Rp${day.revenue.toLocaleString('id-ID')} with ${day.transaksi} transactions. 
-                Health score was ${day.health_score} (${day.status}).`,
-                icon: "fas fa-calendar-day",
-                color: day.health_score > 70 ? "bg-green-500" : day.health_score > 60 ? "bg-blue-500" : "bg-yellow-500"
-            };
-            addInsightCard(insight);
-        });
-
-        const recommendation = {
-            title: "Recommendations",
-            content: weeklyData.revenue_trend === "Naik" ? 
-                "Continue current strategies as they are working well. Consider increasing inventory for popular products." : 
-                "Review marketing strategies. Consider running promotions or discounts to boost sales.",
-            icon: "fas fa-lightbulb",
-            color: "bg-yellow-500"
-        };
-        addInsightCard(recommendation);
-    }
-
-    function addInsightCard(insight) {
-        const insightsContainer = document.getElementById("insightsContainer");
-        const insightCard = document.createElement("div");
-        insightCard.className = "bg-blue-50 rounded-lg p-3";
-        insightCard.innerHTML = `
-            <div class="flex items-start">
-                <div class="${insight.color} text-white p-2 rounded-lg mr-3">
-                    <i class="${insight.icon}"></i>
-                </div>
-                <div>
-                    <h3 class="font-medium">${insight.title}</h3>
-                    <p class="text-sm text-[var(--text-light)] mt-1">${insight.content}</p>
-                </div>
-            </div>
-        `;
-        insightsContainer.appendChild(insightCard);
-    }
-
-    function updateRecentDataTable() {
-        const tableBody = document.getElementById("recentDataTable");
-        tableBody.innerHTML = '';
-
-        dailyData.forEach(item => {
-            const row = document.createElement("tr");
-            let statusColor = "bg-gray-100 text-gray-800";
-            if (item.status === "Hijau") statusColor = "bg-green-100 text-green-800";
-            else if (item.status === "Kuning") statusColor = "bg-yellow-100 text-yellow-800";
-            else if (item.status === "Merah") statusColor = "bg-red-100 text-red-800";
-            else if (item.status === "No Data") statusColor = "bg-gray-100 text-gray-800";
-
-            row.innerHTML = `
-                <td class="py-3 text-sm">${item.date}</td>
-                <td class="py-3 text-sm">Rp${item.revenue.toLocaleString('id-ID')}</td>
-                <td class="py-3 text-sm">${item.transaksi}</td>
-                <td class="py-3 text-sm">
-                    <div class="flex items-center">
-                        <div class="w-8 h-2 bg-gray-200 rounded-full mr-2">
-                            <div class="h-2 rounded-full ${item.health_score > 70 ? 'bg-green-500' : item.health_score > 60 ? 'bg-blue-500' : item.health_score > 0 ? 'bg-yellow-500' : 'bg-gray-500'}" 
-                                 style="width: ${item.health_score}%"></div>
-                        </div>
-                        <span>${item.health_score}</span>
-                    </div>
-                </td>
-                <td class="py-3 text-sm">
-                    <span class="status-badge ${statusColor}">${item.status}</span>
-                </td>
-            `;
-            tableBody.appendChild(row);
-        });
-    }
-
-    function toggleAnomaly() {
-        showAnomaly = !showAnomaly;
-        const btn = document.getElementById("toggleAnomalyBtn");
-        if (showAnomaly) {
-            btn.innerHTML = '<i class="fas fa-eye-slash mr-2"></i> <span class="hidden md:inline">Hide Anomaly</span>';
-            btn.classList.remove("bg-red-100", "text-red-800");
-            btn.classList.add("bg-white", "text-[var(--primary)]", "glow");
-        } else {
-            btn.innerHTML = '<i class="fas fa-eye mr-2"></i> <span class="hidden md:inline">Show Anomaly</span>';
-            btn.classList.remove("bg-white", "text-[var(--primary)]", "glow");
-            btn.classList.add("bg-red-100", "text-red-800");
+            });
         }
-        updateUI();
-    }
 
-    function exportToCSV() {
-        const data = [
-            ["Date", "Revenue", "Transactions", "Health Score"],
-            ...dailyData.map(d => [d.date, d.revenue, d.transaksi, d.health_score])
-        ];
-        const ws = XLSX.utils.aoa_to_sheet(data);
-        const wb = XLSX.utils.book_new();
-        XLSX.utils.book_append_sheet(wb, ws, "Sheet1");
-        XLSX.writeFile(wb, "Business_Weekly_Report.csv");
-    }
+        function updateInsights() {
+            const insightsContainer = document.getElementById("insightsContainer");
+            insightsContainer.innerHTML = '';
 
-    function exportToExcel() {
-        const data = [
-            ["Date", "Revenue", "Transactions", "Health Score"],
-            ...dailyData.map(d => [d.date, d.revenue, d.transaksi, d.health_score])
-        ];
-        const ws = XLSX.utils.aoa_to_sheet(data);
-        const wb = XLSX.utils.book_new();
-        XLSX.utils.book_append_sheet(wb, ws, "Sheet1");
-        XLSX.writeFile(wb, "Business_Weekly_Report.xlsx");
-    }
+            const weeklyInsight = {
+                title: "Weekly Performance Summary",
+                content: `This week's total revenue was Rp${weeklyData.sum_revenue.toLocaleString('id-ID')} with ${weeklyData.sum_transaksi} transactions. 
+                The revenue trend is ${weeklyData.revenue_trend.toLowerCase()} and transactions are ${weeklyData.transaction_trend.toLowerCase()}. 
+                Predicted revenue for tomorrow is Rp${weeklyData.predicted_revenue_day_8.toLocaleString('id-ID')}.`,
+                icon: "fas fa-chart-line",
+                color: "bg-[var(--primary)]"
+            };
+            addInsightCard(weeklyInsight);
 
-    function exportToPDF() {
-        alert("PDF export feature will be implemented soon.");
-    }
+            const recentDays = dailyData.filter(day => day.revenue !== 0).slice(0, 3);
+            recentDays.forEach(day => {
+                const insight = {
+                    title: `Performance on ${day.date}`,
+                    content: `${day.insight}. Revenue was Rp${day.revenue.toLocaleString('id-ID')} with ${day.transaksi} transactions. 
+                    Health score was ${day.health_score} (${day.status}).`,
+                    icon: "fas fa-calendar-day",
+                    color: day.health_score > 70 ? "bg-green-500" : day.health_score > 60 ? "bg-blue-500" : "bg-yellow-500"
+                };
+                addInsightCard(insight);
+            });
 
-    document.addEventListener("DOMContentLoaded", async function() {
-        await updateDataAndUI(true);
+            const recommendation = {
+                title: "Recommendations",
+                content: weeklyData.revenue_trend === "Naik" ? 
+                    "Continue current strategies as they are working well. Consider increasing inventory for popular products." : 
+                    "Review marketing strategies. Consider running promotions or discounts to boost sales.",
+                icon: "fas fa-lightbulb",
+                color: "bg-yellow-500"
+            };
+            addInsightCard(recommendation);
+        }
 
-        setInterval(async () => {
-            await updateDataAndUI();
-        }, FETCH_INTERVAL);
+        function addInsightCard(insight) {
+            const insightsContainer = document.getElementById("insightsContainer");
+            const insightCard = document.createElement("div");
+            insightCard.className = "bg-blue-50 rounded-lg p-3";
+            insightCard.innerHTML = `
+                <div class="flex items-start">
+                    <div class="${insight.color} text-white p-2 rounded-lg mr-3">
+                        <i class="${insight.icon}"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-medium">${insight.title}</h3>
+                        <p class="text-sm text-[var(--text-light)] mt-1">${insight.content}</p>
+                    </div>
+                </div>
+            `;
+            insightsContainer.appendChild(insightCard);
+        }
 
-        document.getElementById("toggleAnomalyBtn").addEventListener("click", toggleAnomaly);
-        document.getElementById("exportCSV").addEventListener("click", exportToCSV);
-        document.getElementById("exportExcel").addEventListener("click", exportToExcel);
-        document.getElementById("exportPDF").addEventListener("click", exportToPDF);
-        document.getElementById("refreshBtn").addEventListener("click", async () => {
+        function updateRecentDataTable() {
+            const tableBody = document.getElementById("recentDataTable");
+            tableBody.innerHTML = '';
+
+            dailyData.forEach(item => {
+                const row = document.createElement("tr");
+                let statusColor = "bg-gray-100 text-gray-800";
+                if (item.status === "Hijau") statusColor = "bg-green-100 text-green-800";
+                else if (item.status === "Hitam") statusColor = "bg-black text-white";
+                else if (item.status === "Merah") statusColor = "bg-red-100 text-red-800";
+                else if (item.status === "No Data") statusColor = "bg-gray-100 text-gray-800";
+
+                row.innerHTML = `
+                    <td class="py-3 text-sm">${item.date}</td>
+                    <td class="py-3 text-sm">Rp${item.revenue.toLocaleString('id-ID')}</td>
+                    <td class="py-3 text-sm">${item.transaksi}</td>
+                    <td class="py-3 text-sm">
+                        <div class="flex items-center">
+                            <div class="w-8 h-2 bg-gray-200 rounded-full mr-2">
+                                <div class="h-2 rounded-full ${item.health_score > 70 ? 'bg-green-500' : item.health_score > 60 ? 'bg-blue-500' : item.health_score > 0 ? 'bg-yellow-500' : 'bg-gray-500'}" 
+                                     style="width: ${item.health_score}%"></div>
+                            </div>
+                            <span>${item.health_score}</span>
+                        </div>
+                    </td>
+                    <td class="py-3 text-sm">
+                        <span class="status-badge ${statusColor}">${item.status}</span>
+                    </td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        function toggleAnomaly() {
+            showAnomaly = !showAnomaly;
+            const btn = document.getElementById("toggleAnomalyBtn");
+            if (showAnomaly) {
+                btn.innerHTML = '<i class="fas fa-eye-slash mr-2"></i> <span class="hidden md:inline">Hide Anomaly</span>';
+                btn.classList.remove("bg-red-100", "text-red-800");
+                btn.classList.add("bg-white", "text-[var(--primary)]", "glow");
+            } else {
+                btn.innerHTML = '<i class="fas fa-eye mr-2"></i> <span class="hidden md:inline">Show Anomaly</span>';
+                btn.classList.remove("bg-white", "text-[var(--primary)]", "glow");
+                btn.classList.add("bg-red-100", "text-red-800");
+            }
+            updateUI();
+        }
+
+        function exportToCSV() {
+            const data = [
+                ["Date", "Revenue", "Transactions", "Health Score"],
+                ...dailyData.map(d => [d.date, d.revenue, d.transaksi, d.health_score])
+            ];
+            const ws = XLSX.utils.aoa_to_sheet(data);
+            const wb = XLSX.utils.book_new();
+            XLSX.utils.book_append_sheet(wb, ws, "Sheet1");
+            XLSX.writeFile(wb, "Business_Weekly_Report.csv");
+        }
+
+        function exportToExcel() {
+            const data = [
+                ["Date", "Revenue", "Transactions", "Health Score"],
+                ...dailyData.map(d => [d.date, d.revenue, d.transaksi, d.health_score])
+            ];
+            const ws = XLSX.utils.aoa_to_sheet(data);
+            const wb = XLSX.utils.book_new();
+            XLSX.utils.book_append_sheet(wb, ws, "Sheet1");
+            XLSX.writeFile(wb, "Business_Weekly_Report.xlsx");
+        }
+
+        function exportToPDF() {
+            alert("PDF export feature will be implemented soon.");
+        }
+
+        document.addEventListener("DOMContentLoaded", async function() {
             await updateDataAndUI(true);
+
+            setInterval(async () => {
+                await updateDataAndUI();
+            }, FETCH_INTERVAL);
+
+            document.getElementById("toggleAnomalyBtn").addEventListener("click", toggleAnomaly);
+
+            const exportBtn = document.getElementById("exportBtn");
+            const exportDropdown = document.getElementById("exportDropdown");
+            exportBtn.addEventListener("click", () => {
+                exportDropdown.classList.toggle("hidden");
+            });
+
+            document.getElementById("exportCSV").addEventListener("click", exportToCSV);
+            document.getElementById("exportExcel").addEventListener("click", exportToExcel);
+            document.getElementById("exportPDF").addEventListener("click", exportToPDF);
+            document.getElementById("refreshBtn").addEventListener("click", async () => {
+                await updateDataAndUI(true);
+            });
+
+            document.addEventListener("click", (e) => {
+                if (!exportBtn.contains(e.target) && !exportDropdown.contains(e.target)) {
+                    exportDropdown.classList.add("hidden");
+                }
+            });
         });
-    });
-</script>
+    </script>
+</body>
+</html>
