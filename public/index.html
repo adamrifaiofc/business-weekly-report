@@ -166,10 +166,19 @@
         }
 
         function formatDate(dateString) {
-            const date = new Date(dateString);
-            const day = date.getDate();
-            const month = date.toLocaleString('en-US', { month: 'short' });
-            return `${day} ${month}`;
+            try {
+                const date = new Date(dateString);
+                if (isNaN(date.getTime())) {
+                    console.error(`Invalid date format: ${dateString}`);
+                    return "N/A";
+                }
+                const day = date.getDate();
+                const month = date.toLocaleString('en-US', { month: 'short' });
+                return `${day} ${month}`;
+            } catch (error) {
+                console.error(`Error formatting date ${dateString}: ${error.message}`);
+                return "N/A";
+            }
         }
 
         function showError(message) {
@@ -182,7 +191,18 @@
 
         function generateDefaultData(lastDate, daysToFill = 7) {
             const defaultDailyData = [];
-            const last = new Date(lastDate);
+            let last;
+            try {
+                last = new Date(lastDate);
+                if (isNaN(last.getTime())) {
+                    console.error(`Invalid lastDate: ${lastDate}, using fallback date`);
+                    last = new Date("2024-01-03");
+                }
+            } catch (error) {
+                console.error(`Error parsing lastDate ${lastDate}: ${error.message}`);
+                last = new Date("2024-01-03");
+            }
+
             for (let i = daysToFill - 1; i >= 0; i--) {
                 const date = new Date(last);
                 date.setDate(last.getDate() - i);
@@ -216,6 +236,9 @@
                 const data = await response.json();
                 lastFetchTime = Date.now();
                 
+                // Log data yang diterima
+                console.log("Fetched data:", data);
+
                 // Ambil isi htmlString dan hapus tag <htmlString> jika ada
                 let htmlString = data.htmlString;
                 htmlString = htmlString.replace(/<htmlString>\s*/, '').replace(/\s*<\/htmlString>/, '');
@@ -231,6 +254,8 @@
                 throw new Error("HTML string is empty or invalid");
             }
 
+            console.log("Parsing HTML string:", htmlString);
+
             const parser = new DOMParser();
             const doc = parser.parseFromString(htmlString, 'text/html');
             const ulElement = doc.querySelector('ul');
@@ -240,8 +265,10 @@
                 const text = li.innerHTML.replace(/<br>/g, '\n').replace(/<[^>]+>/g, '');
                 const lines = text.split('\n').map(line => line.trim());
 
+                console.log("Parsing li lines:", lines);
+
                 const dateMatch = lines[0]?.match(/📆 (\d{4}-\d{2}-\d{2})/);
-                const revenueMatch = lines[1]?.match(/💵 Revenue: Rp([\d.]+)/); // Diperbaiki: Cocokkan "Revenue"
+                const revenueMatch = lines[1]?.match(/💵 Revenue: Rp([\d.]+)/);
                 const revenueChangeMatch = lines[2]?.match(/📈 Perubahan Revenue: ([\d-]+%|Tidak ada data)/);
                 const transaksiMatch = lines[3]?.match(/🧾 Transaksi: (\d+)/);
                 const transaksiChangeMatch = lines[4]?.match(/📉 Perubahan Transaksi: ([\d-]+%|Tidak ada data)/);
@@ -250,8 +277,13 @@
                 const notesMatch = lines[6]?.match(/📝 Catatan: (.+)/);
                 const insightMatch = lines[7]?.match(/🔍 Insight: (.+)/);
 
+                const date = dateMatch ? dateMatch[1] : "N/A";
+                // Validasi tanggal
+                const parsedDate = new Date(date);
+                const isValidDate = !isNaN(parsedDate.getTime());
+
                 return {
-                    date: dateMatch ? dateMatch[1] : "N/A",
+                    date: isValidDate ? date : "N/A",
                     revenue: revenueMatch ? parseInt(revenueMatch[1].replace(/\./g, '')) : 0,
                     transaksi: transaksiMatch ? parseInt(transaksiMatch[1]) : 0,
                     revenue_change: revenueChangeMatch ? (revenueChangeMatch[1] === "Tidak ada data" ? 0 : parseInt(revenueChangeMatch[1])) : 0,
@@ -263,8 +295,16 @@
                 };
             });
 
-            dailyItems.sort((a, b) => new Date(a.date) - new Date(b.date));
-            const lastDate = dailyItems.length > 0 ? dailyItems[dailyItems.length - 1].date : "2024-01-03";
+            console.log("Parsed dailyItems:", dailyItems);
+
+            dailyItems.sort((a, b) => {
+                const dateA = new Date(a.date);
+                const dateB = new Date(b.date);
+                if (isNaN(dateA.getTime()) || isNaN(dateB.getTime())) return 0;
+                return dateA - dateB;
+            });
+
+            const lastDate = dailyItems.length > 0 && dailyItems[dailyItems.length - 1].date !== "N/A" ? dailyItems[dailyItems.length - 1].date : "2024-01-03";
             const defaultData = generateDefaultData(lastDate, 7);
             const existingDates = dailyItems.map(item => item.date);
             const mergedData = defaultData.map(defaultItem => {
@@ -313,6 +353,8 @@
                 }
             });
 
+            console.log("Parsed weeklyData:", weeklyData);
+
             return { dailyItems: mergedData, weeklyData };
         }
 
@@ -347,6 +389,9 @@
 
                 dailyData = parsedData.dailyItems;
                 weeklyData = parsedData.weeklyData;
+
+                console.log("Final dailyData:", dailyData);
+                console.log("Final weeklyData:", weeklyData);
 
                 updateUI();
 
@@ -399,8 +444,8 @@
             document.getElementById("transactionsChange").classList.add(weeklyData.transaction_trend === "Naik" ? "text-green-600" : "text-red-500");
 
             const avgHealthScore = dailyData.reduce((sum, day) => sum + day.health_score, 0) / dailyData.length;
-            document.getElementById("avgHealthScore").textContent = Math.round(avgHealthScore);
-            document.querySelector(".health-score-bar").style.width = `${avgHealthScore}%`;
+            document.getElementById("avgHealthScore").textContent = Math.round(avgHealthScore) || 0;
+            document.querySelector(".health-score-bar div").style.width = `${avgHealthScore || 0}%`;
 
             updateCharts();
             updateInsights();
@@ -411,6 +456,10 @@
             const dates = dailyData.map(item => formatDate(item.date));
             const revenues = dailyData.map(item => item.revenue);
             const transactions = dailyData.map(item => item.transaksi);
+
+            console.log("Chart dates:", dates);
+            console.log("Chart revenues:", revenues);
+            console.log("Chart transactions:", transactions);
 
             if (revenueChart) revenueChart.destroy();
             revenueChart = new Chart(document.getElementById('revenueChart').getContext('2d'), {
