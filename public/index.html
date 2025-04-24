@@ -371,7 +371,6 @@
                 let htmlString = lastHtmlString;
                 const currentTime = Date.now();
 
-                // Selalu fetch data baru jika lastHtmlString kosong atau tidak valid
                 if (forceFetch || !htmlString || (currentTime - lastFetchTime) >= FETCH_INTERVAL) {
                     console.log("Fetching new data...");
                     htmlString = await fetchDataFromSpreadsheet();
@@ -441,7 +440,7 @@
             document.getElementById("transactionsChange").innerHTML = 
                 weeklyData.transaction_trend === "Naik" ? 
                 `<i class="fas fa-arrow-up mr-1"></i> ${Math.abs(dailyData[dailyData.length - 1].transaksi_change)}%` :
-                `<i class="fas fa-arrow-down mr-1"></i> ${Math.abs(dailyData[dailyData.length - 1].trans aeruginosa_change)}%`;
+                `<i class="fas fa-arrow-down mr-1"></i> ${Math.abs(dailyData[dailyData.length - 1].transaksi_change)}%`;
             document.getElementById("transactionsChange").classList.remove("text-green-600", "text-red-500");
             document.getElementById("transactionsChange").classList.add(weeklyData.transaction_trend === "Naik" ? "text-green-600" : "text-red-500");
 
