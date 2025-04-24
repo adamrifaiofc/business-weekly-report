@@ -1,24 +1,41 @@
-<htmlString>
-<p>💰 Total Revenue: Rp52.312.000</p>
-<p>🧾 Total Transaksi: 920</p>
-<p>📈 Rata-rata Revenue: Rp7.473.143</p>
-<p>📊 Rata-rata Transaksi: 131</p>
-<p>🔼 Max Revenue: Rp50.012.000</p>
-<p>🔽 Min Revenue: Rp350.000</p>
-<p>🧮 Prediksi Revenue Hari Ke-8: Rp7.473.143</p>
-<p>📉 Trend Revenue: Naik</p>
-<p>📉 Trend Transaksi: Naik</p>
-<ul>
-    <li>
-        <strong>📆 2024-01-01</strong><br>
-        💵 Revenue: Rp350.000<br>
-        📈 Perubahan Revenue: Tidak ada data<br>
-        🧾 Transaksi: 150<br>
-        📉 Perubahan Transaksi: Tidak ada data<br>
-        📊 Health Score: 50 – <strong>D0 - Hijau (Ideal) | Deviasi: 0% | Tindakan: Lanjutkan operasi normal</strong><br>
-        📝 Catatan: Stabil<br>
-        🔍 Insight: Hari sebelumnya data belum diinput
-    </li>
-    <!-- Item lainnya hingga 2024-01-07 -->
-</ul>
-</htmlString>
+const { google } = require('googleapis');
+
+exports.handler = async (event, context) => {
+    try {
+        const auth = new google.auth.GoogleAuth({
+            credentials: {
+                client_email: process.env.GOOGLE_CLIENT_EMAIL,
+                private_key: process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n'),
+            },
+            scopes: ['https://www.googleapis.com/auth/spreadsheets'],
+        });
+
+        const sheets = google.sheets({ version: 'v4', auth });
+        const spreadsheetId = '12lMzDGZ0f3ZNCRuGxPjCU4d51nAj9T8t2qkkrgnYUik'; // ID Spreadsheet Anda
+        const range = 'Sheet1!B2'; // Sesuaikan dengan sel yang berisi HTML string
+
+        const response = await sheets.spreadsheets.values.get({
+            spreadsheetId,
+            range,
+        });
+
+        const htmlString = response.data.values[0][0]; // Ambil nilai dari sel B2
+        if (!htmlString) {
+            return {
+                statusCode: 404,
+                body: JSON.stringify({ error: "No data found in the specified cell" }),
+            };
+        }
+
+        return {
+            statusCode: 200,
+            body: JSON.stringify({ htmlString }),
+        };
+    } catch (error) {
+        console.error("Error fetching data from Google Sheets:", error);
+        return {
+            statusCode: 500,
+            body: JSON.stringify({ error: error.message }),
+        };
+    }
+};
