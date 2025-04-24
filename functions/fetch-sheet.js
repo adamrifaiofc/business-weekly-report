@@ -2,7 +2,6 @@ const { google } = require('googleapis');
 
 exports.handler = async (event, context) => {
     try {
-        // Debugging: Log variabel lingkungan dan ID spreadsheet
         console.log("Google Client Email:", process.env.GOOGLE_CLIENT_EMAIL);
         console.log("Spreadsheet ID:", "12lMzDGZ0f3ZNCRuGxPjCU4d51nAj9T8t2qkkrgnYUik");
 
