@@ -1,37 +1,24 @@
-const fetch = require('node-fetch');
-
-exports.handler = async (event, context) => {
-    const spreadsheetId = "12lMzDGZ0f3ZNCRuGxPjCU4d51nAj9T8t2qkkrgnYUik";
-    const range = "Sheet1!B2";
-    const apiKey = "AIzaSyB6A9qsC-Zcb4JPifR8Lxq4u6PevTPdkIg";
-    const url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}?key=${apiKey}`;
-
-    try {
-        const response = await fetch(url);
-        if (!response.ok) {
-            return {
-                statusCode: response.status,
-                body: JSON.stringify({ error: `HTTP error! status: ${response.status}` }),
-            };
-        }
-        const data = await response.json();
-        if (!data.values || !data.values[0] || !data.values[0][0]) {
-            return {
-                statusCode: 404,
-                body: JSON.stringify({ error: "No data in specified range (B2)" }),
-            };
-        }
-        return {
-            statusCode: 200,
-            body: JSON.stringify({ htmlString: data.values[0][0] }),
-            headers: {
-                "Access-Control-Allow-Origin": "*",
-            },
-        };
-    } catch (error) {
-        return {
-            statusCode: 500,
-            body: JSON.stringify({ error: error.message }),
-        };
-    }
-};
+<htmlString>
+<p>💰 Total Revenue: Rp52.312.000</p>
+<p>🧾 Total Transaksi: 920</p>
+<p>📈 Rata-rata Revenue: Rp7.473.143</p>
+<p>📊 Rata-rata Transaksi: 131</p>
+<p>🔼 Max Revenue: Rp50.012.000</p>
+<p>🔽 Min Revenue: Rp350.000</p>
+<p>🧮 Prediksi Revenue Hari Ke-8: Rp7.473.143</p>
+<p>📉 Trend Revenue: Naik</p>
+<p>📉 Trend Transaksi: Naik</p>
+<ul>
+    <li>
+        <strong>📆 2024-01-01</strong><br>
+        💵 Revenue: Rp350.000<br>
+        📈 Perubahan Revenue: Tidak ada data<br>
+        🧾 Transaksi: 150<br>
+        📉 Perubahan Transaksi: Tidak ada data<br>
+        📊 Health Score: 50 – <strong>D0 - Hijau (Ideal) | Deviasi: 0% | Tindakan: Lanjutkan operasi normal</strong><br>
+        📝 Catatan: Stabil<br>
+        🔍 Insight: Hari sebelumnya data belum diinput
+    </li>
+    <!-- Item lainnya hingga 2024-01-07 -->
+</ul>
+</htmlString>
