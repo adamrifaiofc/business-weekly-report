@@ -236,12 +236,13 @@
                 const data = await response.json();
                 lastFetchTime = Date.now();
                 
-                // Log data yang diterima
                 console.log("Fetched data:", data);
 
-                // Ambil isi htmlString dan hapus tag <htmlString> jika ada
-                let htmlString = data.htmlString;
+                let htmlString = data.htmlString || "";
                 htmlString = htmlString.replace(/<htmlString>\s*/, '').replace(/\s*<\/htmlString>/, '');
+                if (!htmlString) {
+                    throw new Error("HTML string is empty after processing");
+                }
                 return htmlString;
             } catch (error) {
                 if (error.name === 'AbortError') throw new Error("Timeout: Could not fetch data within 10 seconds");
@@ -278,7 +279,6 @@
                 const insightMatch = lines[7]?.match(/🔍 Insight: (.+)/);
 
                 const date = dateMatch ? dateMatch[1] : "N/A";
-                // Validasi tanggal
                 const parsedDate = new Date(date);
                 const isValidDate = !isNaN(parsedDate.getTime());
 
@@ -298,9 +298,9 @@
             console.log("Parsed dailyItems:", dailyItems);
 
             dailyItems.sort((a, b) => {
+                if (a.date === "N/A" || b.date === "N/A") return 0;
                 const dateA = new Date(a.date);
                 const dateB = new Date(b.date);
-                if (isNaN(dateA.getTime()) || isNaN(dateB.getTime())) return 0;
                 return dateA - dateB;
             });
 
@@ -371,7 +371,9 @@
                 let htmlString = lastHtmlString;
                 const currentTime = Date.now();
 
-                if (forceFetch || (currentTime - lastFetchTime) >= FETCH_INTERVAL) {
+                // Selalu fetch data baru jika lastHtmlString kosong atau tidak valid
+                if (forceFetch || !htmlString || (currentTime - lastFetchTime) >= FETCH_INTERVAL) {
+                    console.log("Fetching new data...");
                     htmlString = await fetchDataFromSpreadsheet();
                 } else {
                     console.log("Using cached data to reduce API requests");
@@ -439,7 +441,7 @@
             document.getElementById("transactionsChange").innerHTML = 
                 weeklyData.transaction_trend === "Naik" ? 
                 `<i class="fas fa-arrow-up mr-1"></i> ${Math.abs(dailyData[dailyData.length - 1].transaksi_change)}%` :
-                `<i class="fas fa-arrow-down mr-1"></i> ${Math.abs(dailyData[dailyData.length - 1].transaksi_change)}%`;
+                `<i class="fas fa-arrow-down mr-1"></i> ${Math.abs(dailyData[dailyData.length - 1].trans aeruginosa_change)}%`;
             document.getElementById("transactionsChange").classList.remove("text-green-600", "text-red-500");
             document.getElementById("transactionsChange").classList.add(weeklyData.transaction_trend === "Naik" ? "text-green-600" : "text-red-500");
 
