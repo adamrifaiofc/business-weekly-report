@@ -5,21 +5,21 @@ exports.handler = async (event, context) => {
         const auth = new google.auth.GoogleAuth({
             credentials: {
                 client_email: process.env.GOOGLE_CLIENT_EMAIL,
-                private_key: process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n'),
+                private_key: process.env.GOOGLE_PRIVATE_KEY,
             },
             scopes: ['https://www.googleapis.com/auth/spreadsheets'],
         });
 
         const sheets = google.sheets({ version: 'v4', auth });
-        const spreadsheetId = '12lMzDGZ0f3ZNCRuGxPjCU4d51nAj9T8t2qkkrgnYUik'; // ID Spreadsheet Anda
-        const range = 'Sheet1!B2'; // Sesuaikan dengan sel yang berisi HTML string
+        const spreadsheetId = '12lMzDGZ0f3ZNCRuGxPjCU4d51nAj9T8t2qkkrgnYUik';
+        const range = 'Sheet1!B2';
 
         const response = await sheets.spreadsheets.values.get({
             spreadsheetId,
             range,
         });
 
-        const htmlString = response.data.values[0][0]; // Ambil nilai dari sel B2
+        const htmlString = response.data.values[0][0];
         if (!htmlString) {
             return {
                 statusCode: 404,
