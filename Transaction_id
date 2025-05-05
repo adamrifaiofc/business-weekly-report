@@ -1,0 +1,4672 @@
+[
+  {
+    "transaction_id": "TXN-001",
+    "cost_center": "CC-001",
+    "actual_spending": 18000000,
+    "outcomes": 12,
+    "cost_per_outcome": 1500000
+  },
+  {
+    "transaction_id": "TXN-002",
+    "cost_center": "CC-002",
+    "actual_spending": 14000000,
+    "outcomes": 10,
+    "cost_per_outcome": 1400000
+  },
+  {
+    "transaction_id": "TXN-003",
+    "cost_center": "CC-003",
+    "actual_spending": 16000000,
+    "outcomes": 11,
+    "cost_per_outcome": 1454545.4545454546
+  },
+  {
+    "transaction_id": "TXN-004",
+    "cost_center": "CC-004",
+    "actual_spending": 11000000,
+    "outcomes": 8,
+    "cost_per_outcome": 1375000
+  },
+  {
+    "transaction_id": "TXN-005",
+    "cost_center": "CC-005",
+    "actual_spending": 23000000,
+    "outcomes": 16,
+    "cost_per_outcome": 1437500
+  },
+  {
+    "transaction_id": "TXN-006",
+    "cost_center": "CC-006",
+    "actual_spending": 15000000,
+    "outcomes": 10,
+    "cost_per_outcome": 1500000
+  },
+  {
+    "transaction_id": "TXN-007",
+    "cost_center": "CC-007",
+    "actual_spending": 19000000,
+    "outcomes": 13,
+    "cost_per_outcome": 1461538.4615384615
+  },
+  {
+    "transaction_id": "TXN-008",
+    "cost_center": "CC-008",
+    "actual_spending": 14000000,
+    "outcomes": 10,
+    "cost_per_outcome": 1400000
+  },
+  {
+    "transaction_id": "TXN-009",
+    "cost_center": "CC-009",
+    "actual_spending": 15000000,
+    "outcomes": 10,
+    "cost_per_outcome": 1500000
+  },
+  {
+    "transaction_id": "TXN-010",
+    "cost_center": "CC-010",
+    "actual_spending": 21000000,
+    "outcomes": 14,
+    "cost_per_outcome": 1500000
+  },
+  {
+    "transaction_id": "TXN-011",
+    "cost_center": "CC-011",
+    "actual_spending": 17000000,
+    "outcomes": 12,
+    "cost_per_outcome": 1416666.6666666667
+  },
+  {
+    "transaction_id": "TXN-012",
+    "cost_center": "CC-012",
+    "actual_spending": 16000000,
+    "outcomes": 11,
+    "cost_per_outcome": 1454545.4545454546
+  },
+  {
+    "transaction_id": "TXN-013",
+    "cost_center": "CC-013",
+    "actual_spending": 13000000,
+    "outcomes": 9,
+    "cost_per_outcome": 1444444.4444444445
+  },
+  {
+    "transaction_id": "TXN-014",
+    "cost_center": "CC-014",
+    "actual_spending": 15500000,
+    "outcomes": 11,
+    "cost_per_outcome": 1409090.9090909092
+  },
+  {
+    "transaction_id": "TXN-015",
+    "cost_center": "CC-015",
+    "actual_spending": 24000000,
+    "outcomes": 16,
+    "cost_per_outcome": 1500000
+  },
+  {
+    "transaction_id": "TXN-016",
+    "cost_center": "CC-016",
+    "actual_spending": 19000000,
+    "outcomes": 13,
+    "cost_per_outcome": 1461538.4615384615
+  },
+  {
+    "transaction_id": "TXN-017",
+    "cost_center": "CC-017",
+    "actual_spending": 17000000,
+    "outcomes": 12,
+    "cost_per_outcome": 1416666.6666666667
+  },
+  {
+    "transaction_id": "TXN-018",
+    "cost_center": "CC-018",
+    "actual_spending": 12000000,
+    "outcomes": 8,
+    "cost_per_outcome": 1500000
+  },
+  {
+    "transaction_id": "TXN-019",
+    "cost_center": "CC-019",
+    "actual_spending": 17000000,
+    "outcomes": 12,
+    "cost_per_outcome": 1416666.6666666667
+  },
+  {
+    "transaction_id": "TXN-020",
+    "cost_center": "CC-020",
+    "actual_spending": 23000000,
+    "outcomes": 16,
+    "cost_per_outcome": 1437500
+  },
+  {
+    "transaction_id": "TXN-021",
+    "cost_center": "CC-021",
+    "actual_spending": 21000000,
+    "outcomes": 14,
+    "cost_per_outcome": 1500000
+  },
+  {
+    "transaction_id": "TXN-022",
+    "cost_center": "CC-022",
+    "actual_spending": 14000000,
+    "outcomes": 10,
+    "cost_per_outcome": 1400000
+  },
+  {
+    "transaction_id": "TXN-023",
+    "cost_center": "CC-023",
+    "actual_spending": 16000000,
+    "outcomes": 11,
+    "cost_per_outcome": 1454545.4545454546
+  },
+  {
+    "transaction_id": "TXN-024",
+    "cost_center": "CC-024",
+    "actual_spending": 10000000,
+    "outcomes": 7,
+    "cost_per_outcome": 1428571.4285714286
+  },
+  {
+    "transaction_id": "TXN-025",
+    "cost_center": "CC-025",
+    "actual_spending": 24000000,
+    "outcomes": 16,
+    "cost_per_outcome": 1500000
+  },
+  {
+    "transaction_id": "TXN-026",
+    "cost_center": "CC-026",
+    "actual_spending": 18000000,
+    "outcomes": 12,
+    "cost_per_outcome": 1500000
+  },
+  {
+    "transaction_id": "TXN-027",
+    "cost_center": "CC-027",
+    "actual_spending": 16000000,
+    "outcomes": 11,
+    "cost_per_outcome": 1454545.4545454546
+  },
+  {
+    "transaction_id": "TXN-028",
+    "cost_center": "CC-028",
+    "actual_spending": 17000000,
+    "outcomes": 12,
+    "cost_per_outcome": 1416666.6666666667
+  },
+  {
+    "transaction_id": "TXN-029",
+    "cost_center": "CC-029",
+    "actual_spending": 13000000,
+    "outcomes": 9,
+    "cost_per_outcome": 1444444.4444444445
+  },
+  {
+    "transaction_id": "TXN-030",
+    "cost_center": "CC-030",
+    "actual_spending": 23000000,
+    "outcomes": 16,
+    "cost_per_outcome": 1437500
+  },
+  {
+    "transaction_id": "TXN-031",
+    "cost_center": "CC-031",
+    "actual_spending": 19000000,
+    "outcomes": 13,
+    "cost_per_outcome": 1461538.4615384615
+  },
+  {
+    "transaction_id": "TXN-032",
+    "cost_center": "CC-032",
+    "actual_spending": 14000000,
+    "outcomes": 10,
+    "cost_per_outcome": 1400000
+  },
+  {
+    "transaction_id": "TXN-033",
+    "cost_center": "CC-033",
+    "actual_spending": 17000000,
+    "outcomes": 12,
+    "cost_per_outcome": 1416666.6666666667
+  },
+  {
+    "transaction_id": "TXN-034",
+    "cost_center": "CC-034",
+    "actual_spending": 11000000,
+    "outcomes": 8,
+    "cost_per_outcome": 1375000
+  },
+  {
+    "transaction_id": "TXN-035",
+    "cost_center": "CC-035",
+    "actual_spending": 22000000,
+    "outcomes": 15,
+    "cost_per_outcome": 1466666.6666666667
+  },
+  {
+    "transaction_id": "TXN-036",
+    "cost_center": "CC-036",
+    "actual_spending": 18000000,
+    "outcomes": 12,
+    "cost_per_outcome": 1500000
+  },
+  {
+    "transaction_id": "TXN-037",
+    "cost_center": "CC-037",
+    "actual_spending": 16000000,
+    "outcomes": 11,
+    "cost_per_outcome": 1454545.4545454546
+  },
+  {
+    "transaction_id": "TXN-038",
+    "cost_center": "CC-038",
+    "actual_spending": 17000000,
+    "outcomes": 12,
+    "cost_per_outcome": 1416666.6666666667
+  },
+  {
+    "transaction_id": "TXN-039",
+    "cost_center": "CC-039",
+    "actual_spending": 13000000,
+    "outcomes": 9,
+    "cost_per_outcome": 1444444.4444444445
+  },
+  {
+    "transaction_id": "TXN-040",
+    "cost_center": "CC-040",
+    "actual_spending": 23000000,
+    "outcomes": 16,
+    "cost_per_outcome": 1437500
+  },
+  {
+    "transaction_id": "TXN-041",
+    "cost_center": "CC-041",
+    "actual_spending": 19000000,
+    "outcomes": 13,
+    "cost_per_outcome": 1461538.4615384615
+  },
+  {
+    "transaction_id": "TXN-042",
+    "cost_center": "CC-042",
+    "actual_spending": 14000000,
+    "outcomes": 10,
+    "cost_per_outcome": 1400000
+  },
+  {
+    "transaction_id": "TXN-043",
+    "cost_center": "CC-043",
+    "actual_spending": 17000000,
+    "outcomes": 12,
+    "cost_per_outcome": 1416666.6666666667
+  },
+  {
+    "transaction_id": "TXN-044",
+    "cost_center": "CC-044",
+    "actual_spending": 11000000,
+    "outcomes": 8,
+    "cost_per_outcome": 1375000
+  },
+  {
+    "transaction_id": "TXN-045",
+    "cost_center": "CC-045",
+    "actual_spending": 22000000,
+    "outcomes": 15,
+    "cost_per_outcome": 1466666.6666666667
+  },
+  {
+    "transaction_id": "TXN-046",
+    "cost_center": "CC-046",
+    "actual_spending": 18000000,
+    "outcomes": 12,
+    "cost_per_outcome": 1500000
+  },
+  {
+    "transaction_id": "TXN-047",
+    "cost_center": "CC-047",
+    "actual_spending": 16000000,
+    "outcomes": 11,
+    "cost_per_outcome": 1454545.4545454546
+  },
+  {
+    "transaction_id": "TXN-048",
+    "cost_center": "CC-048",
+    "actual_spending": 17000000,
+    "outcomes": 12,
+    "cost_per_outcome": 1416666.6666666667
+  },
+  {
+    "transaction_id": "TXN-049",
+    "cost_center": "CC-049",
+    "actual_spending": 13000000,
+    "outcomes": 9,
+    "cost_per_outcome": 1444444.4444444445
+  },
+  {
+    "transaction_id": "TXN-050",
+    "cost_center": "CC-050",
+    "actual_spending": 23000000,
+    "outcomes": 16,
+    "cost_per_outcome": 1437500
+  },
+  {
+    "transaction_id": "TXN-001",
+    "cost_center": "CC-001",
+    "revenue_generated": 25000000,
+    "variable_costs": 5000000,
+    "contribution_margin": 20000000,
+    "contribution_margin_ratio": "80.00"
+  },
+  {
+    "transaction_id": "TXN-002",
+    "cost_center": "CC-002",
+    "revenue_generated": 20000000,
+    "variable_costs": 4000000,
+    "contribution_margin": 16000000,
+    "contribution_margin_ratio": "80.00"
+  },
+  {
+    "transaction_id": "TXN-003",
+    "cost_center": "CC-003",
+    "revenue_generated": 22000000,
+    "variable_costs": 6000000,
+    "contribution_margin": 16000000,
+    "contribution_margin_ratio": "72.73"
+  },
+  {
+    "transaction_id": "TXN-004",
+    "cost_center": "CC-004",
+    "revenue_generated": 15000000,
+    "variable_costs": 3000000,
+    "contribution_margin": 12000000,
+    "contribution_margin_ratio": "80.00"
+  },
+  {
+    "transaction_id": "TXN-005",
+    "cost_center": "CC-005",
+    "revenue_generated": 30000000,
+    "variable_costs": 7000000,
+    "contribution_margin": 23000000,
+    "contribution_margin_ratio": "76.67"
+  },
+  {
+    "transaction_id": "TXN-006",
+    "cost_center": "CC-006",
+    "revenue_generated": 24000000,
+    "variable_costs": 4500000,
+    "contribution_margin": 19500000,
+    "contribution_margin_ratio": "81.25"
+  },
+  {
+    "transaction_id": "TXN-007",
+    "cost_center": "CC-007",
+    "revenue_generated": 27000000,
+    "variable_costs": 8000000,
+    "contribution_margin": 19000000,
+    "contribution_margin_ratio": "70.37"
+  },
+  {
+    "transaction_id": "TXN-008",
+    "cost_center": "CC-008",
+    "revenue_generated": 18000000,
+    "variable_costs": 3500000,
+    "contribution_margin": 14500000,
+    "contribution_margin_ratio": "80.56"
+  },
+  {
+    "transaction_id": "TXN-009",
+    "cost_center": "CC-009",
+    "revenue_generated": 22000000,
+    "variable_costs": 4000000,
+    "contribution_margin": 18000000,
+    "contribution_margin_ratio": "81.82"
+  },
+  {
+    "transaction_id": "TXN-010",
+    "cost_center": "CC-010",
+    "revenue_generated": 32000000,
+    "variable_costs": 9000000,
+    "contribution_margin": 23000000,
+    "contribution_margin_ratio": "71.88"
+  },
+  {
+    "transaction_id": "TXN-011",
+    "cost_center": "CC-011",
+    "revenue_generated": 26000000,
+    "variable_costs": 6000000,
+    "contribution_margin": 20000000,
+    "contribution_margin_ratio": "76.92"
+  },
+  {
+    "transaction_id": "TXN-012",
+    "cost_center": "CC-012",
+    "revenue_generated": 23000000,
+    "variable_costs": 7000000,
+    "contribution_margin": 16000000,
+    "contribution_margin_ratio": "69.57"
+  },
+  {
+    "transaction_id": "TXN-013",
+    "cost_center": "CC-013",
+    "revenue_generated": 20000000,
+    "variable_costs": 4000000,
+    "contribution_margin": 16000000,
+    "contribution_margin_ratio": "80.00"
+  },
+  {
+    "transaction_id": "TXN-014",
+    "cost_center": "CC-014",
+    "revenue_generated": 25000000,
+    "variable_costs": 5000000,
+    "contribution_margin": 20000000,
+    "contribution_margin_ratio": "80.00"
+  },
+  {
+    "transaction_id": "TXN-015",
+    "cost_center": "CC-015",
+    "revenue_generated": 34000000,
+    "variable_costs": 9500000,
+    "contribution_margin": 24500000,
+    "contribution_margin_ratio": "72.06"
+  },
+  {
+    "transaction_id": "TXN-016",
+    "cost_center": "CC-016",
+    "revenue_generated": 28000000,
+    "variable_costs": 7000000,
+    "contribution_margin": 21000000,
+    "contribution_margin_ratio": "75.00"
+  },
+  {
+    "transaction_id": "TXN-017",
+    "cost_center": "CC-017",
+    "revenue_generated": 24000000,
+    "variable_costs": 6500000,
+    "contribution_margin": 17500000,
+    "contribution_margin_ratio": "72.92"
+  },
+  {
+    "transaction_id": "TXN-018",
+    "cost_center": "CC-018",
+    "revenue_generated": 17000000,
+    "variable_costs": 3500000,
+    "contribution_margin": 13500000,
+    "contribution_margin_ratio": "79.41"
+  },
+  {
+    "transaction_id": "TXN-019",
+    "cost_center": "CC-019",
+    "revenue_generated": 24000000,
+    "variable_costs": 6000000,
+    "contribution_margin": 18000000,
+    "contribution_margin_ratio": "75.00"
+  },
+  {
+    "transaction_id": "TXN-020",
+    "cost_center": "CC-020",
+    "revenue_generated": 33000000,
+    "variable_costs": 8500000,
+    "contribution_margin": 24500000,
+    "contribution_margin_ratio": "74.24"
+  },
+  {
+    "transaction_id": "TXN-021",
+    "cost_center": "CC-021",
+    "revenue_generated": 32000000,
+    "variable_costs": 7500000,
+    "contribution_margin": 24500000,
+    "contribution_margin_ratio": "76.56"
+  },
+  {
+    "transaction_id": "TXN-022",
+    "cost_center": "CC-022",
+    "revenue_generated": 20000000,
+    "variable_costs": 4000000,
+    "contribution_margin": 16000000,
+    "contribution_margin_ratio": "80.00"
+  },
+  {
+    "transaction_id": "TXN-023",
+    "cost_center": "CC-023",
+    "revenue_generated": 25000000,
+    "variable_costs": 7000000,
+    "contribution_margin": 18000000,
+    "contribution_margin_ratio": "72.00"
+  },
+  {
+    "transaction_id": "TXN-024",
+    "cost_center": "CC-024",
+    "revenue_generated": 14000000,
+    "variable_costs": 3000000,
+    "contribution_margin": 11000000,
+    "contribution_margin_ratio": "78.57"
+  },
+  {
+    "transaction_id": "TXN-025",
+    "cost_center": "CC-025",
+    "revenue_generated": 35000000,
+    "variable_costs": 8500000,
+    "contribution_margin": 26500000,
+    "contribution_margin_ratio": "75.71"
+  },
+  {
+    "transaction_id": "TXN-026",
+    "cost_center": "CC-026",
+    "revenue_generated": 28000000,
+    "variable_costs": 7000000,
+    "contribution_margin": 21000000,
+    "contribution_margin_ratio": "75.00"
+  },
+  {
+    "transaction_id": "TXN-027",
+    "cost_center": "CC-027",
+    "revenue_generated": 23000000,
+    "variable_costs": 5000000,
+    "contribution_margin": 18000000,
+    "contribution_margin_ratio": "78.26"
+  },
+  {
+    "transaction_id": "TXN-028",
+    "cost_center": "CC-028",
+    "revenue_generated": 25000000,
+    "variable_costs": 6500000,
+    "contribution_margin": 18500000,
+    "contribution_margin_ratio": "74.00"
+  },
+  {
+    "transaction_id": "TXN-029",
+    "cost_center": "CC-029",
+    "revenue_generated": 18000000,
+    "variable_costs": 4000000,
+    "contribution_margin": 14000000,
+    "contribution_margin_ratio": "77.78"
+  },
+  {
+    "transaction_id": "TXN-030",
+    "cost_center": "CC-030",
+    "revenue_generated": 34000000,
+    "variable_costs": 8500000,
+    "contribution_margin": 25500000,
+    "contribution_margin_ratio": "75.00"
+  },
+  {
+    "transaction_id": "TXN-031",
+    "cost_center": "CC-031",
+    "revenue_generated": 28000000,
+    "variable_costs": 7000000,
+    "contribution_margin": 21000000,
+    "contribution_margin_ratio": "75.00"
+  },
+  {
+    "transaction_id": "TXN-032",
+    "cost_center": "CC-032",
+    "revenue_generated": 20000000,
+    "variable_costs": 4000000,
+    "contribution_margin": 16000000,
+    "contribution_margin_ratio": "80.00"
+  },
+  {
+    "transaction_id": "TXN-033",
+    "cost_center": "CC-033",
+    "revenue_generated": 25000000,
+    "variable_costs": 7000000,
+    "contribution_margin": 18000000,
+    "contribution_margin_ratio": "72.00"
+  },
+  {
+    "transaction_id": "TXN-034",
+    "cost_center": "CC-034",
+    "revenue_generated": 15000000,
+    "variable_costs": 3500000,
+    "contribution_margin": 11500000,
+    "contribution_margin_ratio": "76.67"
+  },
+  {
+    "transaction_id": "TXN-035",
+    "cost_center": "CC-035",
+    "revenue_generated": 33000000,
+    "variable_costs": 9000000,
+    "contribution_margin": 24000000,
+    "contribution_margin_ratio": "72.73"
+  },
+  {
+    "transaction_id": "TXN-036",
+    "cost_center": "CC-036",
+    "revenue_generated": 30000000,
+    "variable_costs": 7500000,
+    "contribution_margin": 22500000,
+    "contribution_margin_ratio": "75.00"
+  },
+  {
+    "transaction_id": "TXN-037",
+    "cost_center": "CC-037",
+    "revenue_generated": 24000000,
+    "variable_costs": 6000000,
+    "contribution_margin": 18000000,
+    "contribution_margin_ratio": "75.00"
+  },
+  {
+    "transaction_id": "TXN-038",
+    "cost_center": "CC-038",
+    "revenue_generated": 26000000,
+    "variable_costs": 6500000,
+    "contribution_margin": 19500000,
+    "contribution_margin_ratio": "75.00"
+  },
+  {
+    "transaction_id": "TXN-039",
+    "cost_center": "CC-039",
+    "revenue_generated": 18000000,
+    "variable_costs": 4000000,
+    "contribution_margin": 14000000,
+    "contribution_margin_ratio": "77.78"
+  },
+  {
+    "transaction_id": "TXN-040",
+    "cost_center": "CC-040",
+    "revenue_generated": 34000000,
+    "variable_costs": 8500000,
+    "contribution_margin": 25500000,
+    "contribution_margin_ratio": "75.00"
+  },
+  {
+    "transaction_id": "TXN-041",
+    "cost_center": "CC-041",
+    "revenue_generated": 28000000,
+    "variable_costs": 7000000,
+    "contribution_margin": 21000000,
+    "contribution_margin_ratio": "75.00"
+  },
+  {
+    "transaction_id": "TXN-042",
+    "cost_center": "CC-042",
+    "revenue_generated": 20000000,
+    "variable_costs": 4000000,
+    "contribution_margin": 16000000,
+    "contribution_margin_ratio": "80.00"
+  },
+  {
+    "transaction_id": "TXN-043",
+    "cost_center": "CC-043",
+    "revenue_generated": 25000000,
+    "variable_costs": 7000000,
+    "contribution_margin": 18000000,
+    "contribution_margin_ratio": "72.00"
+  },
+  {
+    "transaction_id": "TXN-044",
+    "cost_center": "CC-044",
+    "revenue_generated": 15000000,
+    "variable_costs": 3500000,
+    "contribution_margin": 11500000,
+    "contribution_margin_ratio": "76.67"
+  },
+  {
+    "transaction_id": "TXN-045",
+    "cost_center": "CC-045",
+    "revenue_generated": 33000000,
+    "variable_costs": 9000000,
+    "contribution_margin": 24000000,
+    "contribution_margin_ratio": "72.73"
+  },
+  {
+    "transaction_id": "TXN-046",
+    "cost_center": "CC-046",
+    "revenue_generated": 30000000,
+    "variable_costs": 7500000,
+    "contribution_margin": 22500000,
+    "contribution_margin_ratio": "75.00"
+  },
+  {
+    "transaction_id": "TXN-047",
+    "cost_center": "CC-047",
+    "revenue_generated": 24000000,
+    "variable_costs": 6000000,
+    "contribution_margin": 18000000,
+    "contribution_margin_ratio": "75.00"
+  },
+  {
+    "transaction_id": "TXN-048",
+    "cost_center": "CC-048",
+    "revenue_generated": 26000000,
+    "variable_costs": 6500000,
+    "contribution_margin": 19500000,
+    "contribution_margin_ratio": "75.00"
+  },
+  {
+    "transaction_id": "TXN-049",
+    "cost_center": "CC-049",
+    "revenue_generated": 18000000,
+    "variable_costs": 4000000,
+    "contribution_margin": 14000000,
+    "contribution_margin_ratio": "77.78"
+  },
+  {
+    "transaction_id": "TXN-050",
+    "cost_center": "CC-050",
+    "revenue_generated": 34000000,
+    "variable_costs": 8500000,
+    "contribution_margin": 25500000,
+    "contribution_margin_ratio": "75.00"
+  },
+  {
+    "transaction_id": "TXN-001",
+    "cost_center": "CC-001",
+    "revenue_generated": 25000000,
+    "fixed_costs": 7000000,
+    "variable_costs": 5000000,
+    "profit": 13000000,
+    "profit_margin": "52.00"
+  },
+  {
+    "transaction_id": "TXN-002",
+    "cost_center": "CC-002",
+    "revenue_generated": 20000000,
+    "fixed_costs": 5000000,
+    "variable_costs": 4000000,
+    "profit": 11000000,
+    "profit_margin": "55.00"
+  },
+  {
+    "transaction_id": "TXN-003",
+    "cost_center": "CC-003",
+    "revenue_generated": 22000000,
+    "fixed_costs": 8000000,
+    "variable_costs": 6000000,
+    "profit": 8000000,
+    "profit_margin": "36.36"
+  },
+  {
+    "transaction_id": "TXN-004",
+    "cost_center": "CC-004",
+    "revenue_generated": 15000000,
+    "fixed_costs": 5000000,
+    "variable_costs": 3000000,
+    "profit": 7000000,
+    "profit_margin": "46.67"
+  },
+  {
+    "transaction_id": "TXN-005",
+    "cost_center": "CC-005",
+    "revenue_generated": 30000000,
+    "fixed_costs": 10000000,
+    "variable_costs": 7000000,
+    "profit": 13000000,
+    "profit_margin": "43.33"
+  },
+  {
+    "transaction_id": "TXN-006",
+    "cost_center": "CC-006",
+    "revenue_generated": 24000000,
+    "fixed_costs": 6500000,
+    "variable_costs": 4500000,
+    "profit": 13000000,
+    "profit_margin": "54.17"
+  },
+  {
+    "transaction_id": "TXN-007",
+    "cost_center": "CC-007",
+    "revenue_generated": 27000000,
+    "fixed_costs": 9000000,
+    "variable_costs": 8000000,
+    "profit": 10000000,
+    "profit_margin": "37.04"
+  },
+  {
+    "transaction_id": "TXN-008",
+    "cost_center": "CC-008",
+    "revenue_generated": 18000000,
+    "fixed_costs": 4500000,
+    "variable_costs": 3500000,
+    "profit": 10000000,
+    "profit_margin": "55.56"
+  },
+  {
+    "transaction_id": "TXN-009",
+    "cost_center": "CC-009",
+    "revenue_generated": 22000000,
+    "fixed_costs": 5500000,
+    "variable_costs": 4000000,
+    "profit": 12500000,
+    "profit_margin": "56.82"
+  },
+  {
+    "transaction_id": "TXN-010",
+    "cost_center": "CC-010",
+    "revenue_generated": 32000000,
+    "fixed_costs": 9500000,
+    "variable_costs": 9000000,
+    "profit": 13500000,
+    "profit_margin": "42.19"
+  },
+  {
+    "transaction_id": "TXN-011",
+    "cost_center": "CC-011",
+    "revenue_generated": 26000000,
+    "fixed_costs": 8000000,
+    "variable_costs": 6000000,
+    "profit": 12000000,
+    "profit_margin": "46.15"
+  },
+  {
+    "transaction_id": "TXN-012",
+    "cost_center": "CC-012",
+    "revenue_generated": 23000000,
+    "fixed_costs": 7500000,
+    "variable_costs": 7000000,
+    "profit": 8500000,
+    "profit_margin": "36.96"
+  },
+  {
+    "transaction_id": "TXN-013",
+    "cost_center": "CC-013",
+    "revenue_generated": 20000000,
+    "fixed_costs": 6000000,
+    "variable_costs": 4000000,
+    "profit": 10000000,
+    "profit_margin": "50.00"
+  },
+  {
+    "transaction_id": "TXN-014",
+    "cost_center": "CC-014",
+    "revenue_generated": 25000000,
+    "fixed_costs": 6000000,
+    "variable_costs": 5000000,
+    "profit": 14000000,
+    "profit_margin": "56.00"
+  },
+  {
+    "transaction_id": "TXN-015",
+    "cost_center": "CC-015",
+    "revenue_generated": 34000000,
+    "fixed_costs": 10500000,
+    "variable_costs": 9500000,
+    "profit": 14000000,
+    "profit_margin": "41.18"
+  },
+  {
+    "transaction_id": "TXN-016",
+    "cost_center": "CC-016",
+    "revenue_generated": 28000000,
+    "fixed_costs": 8500000,
+    "variable_costs": 7000000,
+    "profit": 12500000,
+    "profit_margin": "44.64"
+  },
+  {
+    "transaction_id": "TXN-017",
+    "cost_center": "CC-017",
+    "revenue_generated": 24000000,
+    "fixed_costs": 7500000,
+    "variable_costs": 6500000,
+    "profit": 10000000,
+    "profit_margin": "41.67"
+  },
+  {
+    "transaction_id": "TXN-018",
+    "cost_center": "CC-018",
+    "revenue_generated": 17000000,
+    "fixed_costs": 5000000,
+    "variable_costs": 3500000,
+    "profit": 8500000,
+    "profit_margin": "50.00"
+  },
+  {
+    "transaction_id": "TXN-019",
+    "cost_center": "CC-019",
+    "revenue_generated": 24000000,
+    "fixed_costs": 7000000,
+    "variable_costs": 6000000,
+    "profit": 11000000,
+    "profit_margin": "45.83"
+  },
+  {
+    "transaction_id": "TXN-020",
+    "cost_center": "CC-020",
+    "revenue_generated": 33000000,
+    "fixed_costs": 11000000,
+    "variable_costs": 8500000,
+    "profit": 13500000,
+    "profit_margin": "40.91"
+  },
+  {
+    "transaction_id": "TXN-021",
+    "cost_center": "CC-021",
+    "revenue_generated": 32000000,
+    "fixed_costs": 9500000,
+    "variable_costs": 7500000,
+    "profit": 15000000,
+    "profit_margin": "46.88"
+  },
+  {
+    "transaction_id": "TXN-022",
+    "cost_center": "CC-022",
+    "revenue_generated": 20000000,
+    "fixed_costs": 6000000,
+    "variable_costs": 4000000,
+    "profit": 10000000,
+    "profit_margin": "50.00"
+  },
+  {
+    "transaction_id": "TXN-023",
+    "cost_center": "CC-023",
+    "revenue_generated": 25000000,
+    "fixed_costs": 8000000,
+    "variable_costs": 7000000,
+    "profit": 10000000,
+    "profit_margin": "40.00"
+  },
+  {
+    "transaction_id": "TXN-024",
+    "cost_center": "CC-024",
+    "revenue_generated": 14000000,
+    "fixed_costs": 4500000,
+    "variable_costs": 3000000,
+    "profit": 6500000,
+    "profit_margin": "46.43"
+  },
+  {
+    "transaction_id": "TXN-025",
+    "cost_center": "CC-025",
+    "revenue_generated": 35000000,
+    "fixed_costs": 10500000,
+    "variable_costs": 8500000,
+    "profit": 16000000,
+    "profit_margin": "45.71"
+  },
+  {
+    "transaction_id": "TXN-026",
+    "cost_center": "CC-026",
+    "revenue_generated": 28000000,
+    "fixed_costs": 9000000,
+    "variable_costs": 7000000,
+    "profit": 12000000,
+    "profit_margin": "42.86"
+  },
+  {
+    "transaction_id": "TXN-027",
+    "cost_center": "CC-027",
+    "revenue_generated": 23000000,
+    "fixed_costs": 6000000,
+    "variable_costs": 5000000,
+    "profit": 12000000,
+    "profit_margin": "52.17"
+  },
+  {
+    "transaction_id": "TXN-028",
+    "cost_center": "CC-028",
+    "revenue_generated": 25000000,
+    "fixed_costs": 8000000,
+    "variable_costs": 6500000,
+    "profit": 10500000,
+    "profit_margin": "42.00"
+  },
+  {
+    "transaction_id": "TXN-029",
+    "cost_center": "CC-029",
+    "revenue_generated": 18000000,
+    "fixed_costs": 5000000,
+    "variable_costs": 4000000,
+    "profit": 9000000,
+    "profit_margin": "50.00"
+  },
+  {
+    "transaction_id": "TXN-030",
+    "cost_center": "CC-030",
+    "revenue_generated": 34000000,
+    "fixed_costs": 11000000,
+    "variable_costs": 8500000,
+    "profit": 14500000,
+    "profit_margin": "42.65"
+  },
+  {
+    "transaction_id": "TXN-031",
+    "cost_center": "CC-031",
+    "revenue_generated": 28000000,
+    "fixed_costs": 8500000,
+    "variable_costs": 7000000,
+    "profit": 12500000,
+    "profit_margin": "44.64"
+  },
+  {
+    "transaction_id": "TXN-032",
+    "cost_center": "CC-032",
+    "revenue_generated": 20000000,
+    "fixed_costs": 6000000,
+    "variable_costs": 4000000,
+    "profit": 10000000,
+    "profit_margin": "50.00"
+  },
+  {
+    "transaction_id": "TXN-033",
+    "cost_center": "CC-033",
+    "revenue_generated": 25000000,
+    "fixed_costs": 8000000,
+    "variable_costs": 7000000,
+    "profit": 10000000,
+    "profit_margin": "40.00"
+  },
+  {
+    "transaction_id": "TXN-034",
+    "cost_center": "CC-034",
+    "revenue_generated": 15000000,
+    "fixed_costs": 4500000,
+    "variable_costs": 3500000,
+    "profit": 7000000,
+    "profit_margin": "46.67"
+  },
+  {
+    "transaction_id": "TXN-035",
+    "cost_center": "CC-035",
+    "revenue_generated": 33000000,
+    "fixed_costs": 10000000,
+    "variable_costs": 9000000,
+    "profit": 14000000,
+    "profit_margin": "42.42"
+  },
+  {
+    "transaction_id": "TXN-036",
+    "cost_center": "CC-036",
+    "revenue_generated": 30000000,
+    "fixed_costs": 8500000,
+    "variable_costs": 7500000,
+    "profit": 14000000,
+    "profit_margin": "46.67"
+  },
+  {
+    "transaction_id": "TXN-037",
+    "cost_center": "CC-037",
+    "revenue_generated": 24000000,
+    "fixed_costs": 8000000,
+    "variable_costs": 6000000,
+    "profit": 10000000,
+    "profit_margin": "41.67"
+  },
+  {
+    "transaction_id": "TXN-038",
+    "cost_center": "CC-038",
+    "revenue_generated": 26000000,
+    "fixed_costs": 8000000,
+    "variable_costs": 6500000,
+    "profit": 11500000,
+    "profit_margin": "44.23"
+  },
+  {
+    "transaction_id": "TXN-039",
+    "cost_center": "CC-039",
+    "revenue_generated": 18000000,
+    "fixed_costs": 5000000,
+    "variable_costs": 4000000,
+    "profit": 9000000,
+    "profit_margin": "50.00"
+  },
+  {
+    "transaction_id": "TXN-040",
+    "cost_center": "CC-040",
+    "revenue_generated": 34000000,
+    "fixed_costs": 11000000,
+    "variable_costs": 8500000,
+    "profit": 14500000,
+    "profit_margin": "42.65"
+  },
+  {
+    "transaction_id": "TXN-041",
+    "cost_center": "CC-041",
+    "revenue_generated": 28000000,
+    "fixed_costs": 8500000,
+    "variable_costs": 7000000,
+    "profit": 12500000,
+    "profit_margin": "44.64"
+  },
+  {
+    "transaction_id": "TXN-042",
+    "cost_center": "CC-042",
+    "revenue_generated": 20000000,
+    "fixed_costs": 6000000,
+    "variable_costs": 4000000,
+    "profit": 10000000,
+    "profit_margin": "50.00"
+  },
+  {
+    "transaction_id": "TXN-043",
+    "cost_center": "CC-043",
+    "revenue_generated": 25000000,
+    "fixed_costs": 8000000,
+    "variable_costs": 7000000,
+    "profit": 10000000,
+    "profit_margin": "40.00"
+  },
+  {
+    "transaction_id": "TXN-044",
+    "cost_center": "CC-044",
+    "revenue_generated": 15000000,
+    "fixed_costs": 4500000,
+    "variable_costs": 3500000,
+    "profit": 7000000,
+    "profit_margin": "46.67"
+  },
+  {
+    "transaction_id": "TXN-045",
+    "cost_center": "CC-045",
+    "revenue_generated": 33000000,
+    "fixed_costs": 10000000,
+    "variable_costs": 9000000,
+    "profit": 14000000,
+    "profit_margin": "42.42"
+  },
+  {
+    "transaction_id": "TXN-046",
+    "cost_center": "CC-046",
+    "revenue_generated": 30000000,
+    "fixed_costs": 8500000,
+    "variable_costs": 7500000,
+    "profit": 14000000,
+    "profit_margin": "46.67"
+  },
+  {
+    "transaction_id": "TXN-047",
+    "cost_center": "CC-047",
+    "revenue_generated": 24000000,
+    "fixed_costs": 8000000,
+    "variable_costs": 6000000,
+    "profit": 10000000,
+    "profit_margin": "41.67"
+  },
+  {
+    "transaction_id": "TXN-048",
+    "cost_center": "CC-048",
+    "revenue_generated": 26000000,
+    "fixed_costs": 8000000,
+    "variable_costs": 6500000,
+    "profit": 11500000,
+    "profit_margin": "44.23"
+  },
+  {
+    "transaction_id": "TXN-049",
+    "cost_center": "CC-049",
+    "revenue_generated": 18000000,
+    "fixed_costs": 5000000,
+    "variable_costs": 4000000,
+    "profit": 9000000,
+    "profit_margin": "50.00"
+  },
+  {
+    "transaction_id": "TXN-050",
+    "cost_center": "CC-050",
+    "revenue_generated": 34000000,
+    "fixed_costs": 11000000,
+    "variable_costs": 8500000,
+    "profit": 14500000,
+    "profit_margin": "42.65"
+  },
+  {
+    "transaction_id": "TXN-001",
+    "cost_center": "CC-001",
+    "actual_spending": 18000000,
+    "is_outlier": false,
+    "lower_bound": 6500000,
+    "upper_bound": 26500000
+  },
+  {
+    "transaction_id": "TXN-002",
+    "cost_center": "CC-002",
+    "actual_spending": 14000000,
+    "is_outlier": false,
+    "lower_bound": 6500000,
+    "upper_bound": 26500000
+  },
+  {
+    "transaction_id": "TXN-003",
+    "cost_center": "CC-003",
+    "actual_spending": 16000000,
+    "is_outlier": false,
+    "lower_bound": 6500000,
+    "upper_bound": 26500000
+  },
+  {
+    "transaction_id": "TXN-004",
+    "cost_center": "CC-004",
+    "actual_spending": 11000000,
+    "is_outlier": false,
+    "lower_bound": 6500000,
+    "upper_bound": 26500000
+  },
+  {
+    "transaction_id": "TXN-005",
+    "cost_center": "CC-005",
+    "actual_spending": 23000000,
+    "is_outlier": false,
+    "lower_bound": 6500000,
+    "upper_bound": 26500000
+  },
+  {
+    "transaction_id": "TXN-006",
+    "cost_center": "CC-006",
+    "actual_spending": 15000000,
+    "is_outlier": false,
+    "lower_bound": 6500000,
+    "upper_bound": 26500000
+  },
+  {
+    "transaction_id": "TXN-007",
+    "cost_center": "CC-007",
+    "actual_spending": 19000000,
+    "is_outlier": false,
+    "lower_bound": 6500000,
+    "upper_bound": 26500000
+  },
+  {
+    "transaction_id": "TXN-008",
+    "cost_center": "CC-008",
+    "actual_spending": 14000000,
+    "is_outlier": false,
+    "lower_bound": 6500000,
+    "upper_bound": 26500000
+  },
+  {
+    "transaction_id": "TXN-009",
+    "cost_center": "CC-009",
+    "actual_spending": 15000000,
+    "is_outlier": false,
+    "lower_bound": 6500000,
+    "upper_bound": 26500000
+  },
+  {
+    "transaction_id": "TXN-010",
+    "cost_center": "CC-010",
+    "actual_spending": 21000000,
+    "is_outlier": false,
+    "lower_bound": 6500000,
+    "upper_bound": 26500000
+  },
+  {
+    "transaction_id": "TXN-011",
+    "cost_center": "CC-011",
+    "actual_spending": 17000000,
+    "is_outlier": false,
+    "lower_bound": 6500000,
+    "upper_bound": 26500000
+  },
+  {
+    "transaction_id": "TXN-012",
+    "cost_center": "CC-012",
+    "actual_spending": 16000000,
+    "is_outlier": false,
+    "lower_bound": 6500000,
+    "upper_bound": 26500000
+  },
+  {
+    "transaction_id": "TXN-013",
+    "cost_center": "CC-013",
+    "actual_spending": 13000000,
+    "is_outlier": false,
+    "lower_bound": 6500000,
+    "upper_bound": 26500000
+  },
+  {
+    "transaction_id": "TXN-014",
+    "cost_center": "CC-014",
+    "actual_spending": 15500000,
+    "is_outlier": false,
+    "lower_bound": 6500000,
+    "upper_bound": 26500000
+  },
+  {
+    "transaction_id": "TXN-015",
+    "cost_center": "CC-015",
+    "actual_spending": 24000000,
+    "is_outlier": false,
+    "lower_bound": 6500000,
+    "upper_bound": 26500000
+  },
+  {
+    "transaction_id": "TXN-016",
+    "cost_center": "CC-016",
+    "actual_spending": 19000000,
+    "is_outlier": false,
+    "lower_bound": 6500000,
+    "upper_bound": 26500000
+  },
+  {
+    "transaction_id": "TXN-017",
+    "cost_center": "CC-017",
+    "actual_spending": 17000000,
+    "is_outlier": false,
+    "lower_bound": 6500000,
+    "upper_bound": 26500000
+  },
+  {
+    "transaction_id": "TXN-018",
+    "cost_center": "CC-018",
+    "actual_spending": 12000000,
+    "is_outlier": false,
+    "lower_bound": 6500000,
+    "upper_bound": 26500000
+  },
+  {
+    "transaction_id": "TXN-019",
+    "cost_center": "CC-019",
+    "actual_spending": 17000000,
+    "is_outlier": false,
+    "lower_bound": 6500000,
+    "upper_bound": 26500000
+  },
+  {
+    "transaction_id": "TXN-020",
+    "cost_center": "CC-020",
+    "actual_spending": 23000000,
+    "is_outlier": false,
+    "lower_bound": 6500000,
+    "upper_bound": 26500000
+  },
+  {
+    "transaction_id": "TXN-021",
+    "cost_center": "CC-021",
+    "actual_spending": 21000000,
+    "is_outlier": false,
+    "lower_bound": 6500000,
+    "upper_bound": 26500000
+  },
+  {
+    "transaction_id": "TXN-022",
+    "cost_center": "CC-022",
+    "actual_spending": 14000000,
+    "is_outlier": false,
+    "lower_bound": 6500000,
+    "upper_bound": 26500000
+  },
+  {
+    "transaction_id": "TXN-023",
+    "cost_center": "CC-023",
+    "actual_spending": 16000000,
+    "is_outlier": false,
+    "lower_bound": 6500000,
+    "upper_bound": 26500000
+  },
+  {
+    "transaction_id": "TXN-024",
+    "cost_center": "CC-024",
+    "actual_spending": 10000000,
+    "is_outlier": false,
+    "lower_bound": 6500000,
+    "upper_bound": 26500000
+  },
+  {
+    "transaction_id": "TXN-025",
+    "cost_center": "CC-025",
+    "actual_spending": 24000000,
+    "is_outlier": false,
+    "lower_bound": 6500000,
+    "upper_bound": 26500000
+  },
+  {
+    "transaction_id": "TXN-026",
+    "cost_center": "CC-026",
+    "actual_spending": 18000000,
+    "is_outlier": false,
+    "lower_bound": 6500000,
+    "upper_bound": 26500000
+  },
+  {
+    "transaction_id": "TXN-027",
+    "cost_center": "CC-027",
+    "actual_spending": 16000000,
+    "is_outlier": false,
+    "lower_bound": 6500000,
+    "upper_bound": 26500000
+  },
+  {
+    "transaction_id": "TXN-028",
+    "cost_center": "CC-028",
+    "actual_spending": 17000000,
+    "is_outlier": false,
+    "lower_bound": 6500000,
+    "upper_bound": 26500000
+  },
+  {
+    "transaction_id": "TXN-029",
+    "cost_center": "CC-029",
+    "actual_spending": 13000000,
+    "is_outlier": false,
+    "lower_bound": 6500000,
+    "upper_bound": 26500000
+  },
+  {
+    "transaction_id": "TXN-030",
+    "cost_center": "CC-030",
+    "actual_spending": 23000000,
+    "is_outlier": false,
+    "lower_bound": 6500000,
+    "upper_bound": 26500000
+  },
+  {
+    "transaction_id": "TXN-031",
+    "cost_center": "CC-031",
+    "actual_spending": 19000000,
+    "is_outlier": false,
+    "lower_bound": 6500000,
+    "upper_bound": 26500000
+  },
+  {
+    "transaction_id": "TXN-032",
+    "cost_center": "CC-032",
+    "actual_spending": 14000000,
+    "is_outlier": false,
+    "lower_bound": 6500000,
+    "upper_bound": 26500000
+  },
+  {
+    "transaction_id": "TXN-033",
+    "cost_center": "CC-033",
+    "actual_spending": 17000000,
+    "is_outlier": false,
+    "lower_bound": 6500000,
+    "upper_bound": 26500000
+  },
+  {
+    "transaction_id": "TXN-034",
+    "cost_center": "CC-034",
+    "actual_spending": 11000000,
+    "is_outlier": false,
+    "lower_bound": 6500000,
+    "upper_bound": 26500000
+  },
+  {
+    "transaction_id": "TXN-035",
+    "cost_center": "CC-035",
+    "actual_spending": 22000000,
+    "is_outlier": false,
+    "lower_bound": 6500000,
+    "upper_bound": 26500000
+  },
+  {
+    "transaction_id": "TXN-036",
+    "cost_center": "CC-036",
+    "actual_spending": 18000000,
+    "is_outlier": false,
+    "lower_bound": 6500000,
+    "upper_bound": 26500000
+  },
+  {
+    "transaction_id": "TXN-037",
+    "cost_center": "CC-037",
+    "actual_spending": 16000000,
+    "is_outlier": false,
+    "lower_bound": 6500000,
+    "upper_bound": 26500000
+  },
+  {
+    "transaction_id": "TXN-038",
+    "cost_center": "CC-038",
+    "actual_spending": 17000000,
+    "is_outlier": false,
+    "lower_bound": 6500000,
+    "upper_bound": 26500000
+  },
+  {
+    "transaction_id": "TXN-039",
+    "cost_center": "CC-039",
+    "actual_spending": 13000000,
+    "is_outlier": false,
+    "lower_bound": 6500000,
+    "upper_bound": 26500000
+  },
+  {
+    "transaction_id": "TXN-040",
+    "cost_center": "CC-040",
+    "actual_spending": 23000000,
+    "is_outlier": false,
+    "lower_bound": 6500000,
+    "upper_bound": 26500000
+  },
+  {
+    "transaction_id": "TXN-041",
+    "cost_center": "CC-041",
+    "actual_spending": 19000000,
+    "is_outlier": false,
+    "lower_bound": 6500000,
+    "upper_bound": 26500000
+  },
+  {
+    "transaction_id": "TXN-042",
+    "cost_center": "CC-042",
+    "actual_spending": 14000000,
+    "is_outlier": false,
+    "lower_bound": 6500000,
+    "upper_bound": 26500000
+  },
+  {
+    "transaction_id": "TXN-043",
+    "cost_center": "CC-043",
+    "actual_spending": 17000000,
+    "is_outlier": false,
+    "lower_bound": 6500000,
+    "upper_bound": 26500000
+  },
+  {
+    "transaction_id": "TXN-044",
+    "cost_center": "CC-044",
+    "actual_spending": 11000000,
+    "is_outlier": false,
+    "lower_bound": 6500000,
+    "upper_bound": 26500000
+  },
+  {
+    "transaction_id": "TXN-045",
+    "cost_center": "CC-045",
+    "actual_spending": 22000000,
+    "is_outlier": false,
+    "lower_bound": 6500000,
+    "upper_bound": 26500000
+  },
+  {
+    "transaction_id": "TXN-046",
+    "cost_center": "CC-046",
+    "actual_spending": 18000000,
+    "is_outlier": false,
+    "lower_bound": 6500000,
+    "upper_bound": 26500000
+  },
+  {
+    "transaction_id": "TXN-047",
+    "cost_center": "CC-047",
+    "actual_spending": 16000000,
+    "is_outlier": false,
+    "lower_bound": 6500000,
+    "upper_bound": 26500000
+  },
+  {
+    "transaction_id": "TXN-048",
+    "cost_center": "CC-048",
+    "actual_spending": 17000000,
+    "is_outlier": false,
+    "lower_bound": 6500000,
+    "upper_bound": 26500000
+  },
+  {
+    "transaction_id": "TXN-049",
+    "cost_center": "CC-049",
+    "actual_spending": 13000000,
+    "is_outlier": false,
+    "lower_bound": 6500000,
+    "upper_bound": 26500000
+  },
+  {
+    "transaction_id": "TXN-050",
+    "cost_center": "CC-050",
+    "actual_spending": 23000000,
+    "is_outlier": false,
+    "lower_bound": 6500000,
+    "upper_bound": 26500000
+  },
+  {
+    "transaction_id": "TXN-001",
+    "cost_center": "CC-001",
+    "budget_allocated": 20000000,
+    "actual_spending": 18000000,
+    "utilization_rate": "90.00"
+  },
+  {
+    "transaction_id": "TXN-002",
+    "cost_center": "CC-002",
+    "budget_allocated": 15000000,
+    "actual_spending": 14000000,
+    "utilization_rate": "93.33"
+  },
+  {
+    "transaction_id": "TXN-003",
+    "cost_center": "CC-003",
+    "budget_allocated": 18000000,
+    "actual_spending": 16000000,
+    "utilization_rate": "88.89"
+  },
+  {
+    "transaction_id": "TXN-004",
+    "cost_center": "CC-004",
+    "budget_allocated": 12000000,
+    "actual_spending": 11000000,
+    "utilization_rate": "91.67"
+  },
+  {
+    "transaction_id": "TXN-005",
+    "cost_center": "CC-005",
+    "budget_allocated": 25000000,
+    "actual_spending": 23000000,
+    "utilization_rate": "92.00"
+  },
+  {
+    "transaction_id": "TXN-006",
+    "cost_center": "CC-006",
+    "budget_allocated": 18000000,
+    "actual_spending": 15000000,
+    "utilization_rate": "83.33"
+  },
+  {
+    "transaction_id": "TXN-007",
+    "cost_center": "CC-007",
+    "budget_allocated": 20000000,
+    "actual_spending": 19000000,
+    "utilization_rate": "95.00"
+  },
+  {
+    "transaction_id": "TXN-008",
+    "cost_center": "CC-008",
+    "budget_allocated": 15000000,
+    "actual_spending": 14000000,
+    "utilization_rate": "93.33"
+  },
+  {
+    "transaction_id": "TXN-009",
+    "cost_center": "CC-009",
+    "budget_allocated": 16000000,
+    "actual_spending": 15000000,
+    "utilization_rate": "93.75"
+  },
+  {
+    "transaction_id": "TXN-010",
+    "cost_center": "CC-010",
+    "budget_allocated": 24000000,
+    "actual_spending": 21000000,
+    "utilization_rate": "87.50"
+  },
+  {
+    "transaction_id": "TXN-011",
+    "cost_center": "CC-011",
+    "budget_allocated": 19000000,
+    "actual_spending": 17000000,
+    "utilization_rate": "89.47"
+  },
+  {
+    "transaction_id": "TXN-012",
+    "cost_center": "CC-012",
+    "budget_allocated": 17000000,
+    "actual_spending": 16000000,
+    "utilization_rate": "94.12"
+  },
+  {
+    "transaction_id": "TXN-013",
+    "cost_center": "CC-013",
+    "budget_allocated": 14000000,
+    "actual_spending": 13000000,
+    "utilization_rate": "92.86"
+  },
+  {
+    "transaction_id": "TXN-014",
+    "cost_center": "CC-014",
+    "budget_allocated": 17000000,
+    "actual_spending": 15500000,
+    "utilization_rate": "91.18"
+  },
+  {
+    "transaction_id": "TXN-015",
+    "cost_center": "CC-015",
+    "budget_allocated": 26000000,
+    "actual_spending": 24000000,
+    "utilization_rate": "92.31"
+  },
+  {
+    "transaction_id": "TXN-016",
+    "cost_center": "CC-016",
+    "budget_allocated": 21000000,
+    "actual_spending": 19000000,
+    "utilization_rate": "90.48"
+  },
+  {
+    "transaction_id": "TXN-017",
+    "cost_center": "CC-017",
+    "budget_allocated": 19000000,
+    "actual_spending": 17000000,
+    "utilization_rate": "89.47"
+  },
+  {
+    "transaction_id": "TXN-018",
+    "cost_center": "CC-018",
+    "budget_allocated": 13000000,
+    "actual_spending": 12000000,
+    "utilization_rate": "92.31"
+  },
+  {
+    "transaction_id": "TXN-019",
+    "cost_center": "CC-019",
+    "budget_allocated": 18000000,
+    "actual_spending": 17000000,
+    "utilization_rate": "94.44"
+  },
+  {
+    "transaction_id": "TXN-020",
+    "cost_center": "CC-020",
+    "budget_allocated": 25000000,
+    "actual_spending": 23000000,
+    "utilization_rate": "92.00"
+  },
+  {
+    "transaction_id": "TXN-021",
+    "cost_center": "CC-021",
+    "budget_allocated": 23000000,
+    "actual_spending": 21000000,
+    "utilization_rate": "91.30"
+  },
+  {
+    "transaction_id": "TXN-022",
+    "cost_center": "CC-022",
+    "budget_allocated": 15000000,
+    "actual_spending": 14000000,
+    "utilization_rate": "93.33"
+  },
+  {
+    "transaction_id": "TXN-023",
+    "cost_center": "CC-023",
+    "budget_allocated": 18000000,
+    "actual_spending": 16000000,
+    "utilization_rate": "88.89"
+  },
+  {
+    "transaction_id": "TXN-024",
+    "cost_center": "CC-024",
+    "budget_allocated": 11000000,
+    "actual_spending": 10000000,
+    "utilization_rate": "90.91"
+  },
+  {
+    "transaction_id": "TXN-025",
+    "cost_center": "CC-025",
+    "budget_allocated": 26000000,
+    "actual_spending": 24000000,
+    "utilization_rate": "92.31"
+  },
+  {
+    "transaction_id": "TXN-026",
+    "cost_center": "CC-026",
+    "budget_allocated": 20000000,
+    "actual_spending": 18000000,
+    "utilization_rate": "90.00"
+  },
+  {
+    "transaction_id": "TXN-027",
+    "cost_center": "CC-027",
+    "budget_allocated": 17000000,
+    "actual_spending": 16000000,
+    "utilization_rate": "94.12"
+  },
+  {
+    "transaction_id": "TXN-028",
+    "cost_center": "CC-028",
+    "budget_allocated": 19000000,
+    "actual_spending": 17000000,
+    "utilization_rate": "89.47"
+  },
+  {
+    "transaction_id": "TXN-029",
+    "cost_center": "CC-029",
+    "budget_allocated": 14000000,
+    "actual_spending": 13000000,
+    "utilization_rate": "92.86"
+  },
+  {
+    "transaction_id": "TXN-030",
+    "cost_center": "CC-030",
+    "budget_allocated": 25000000,
+    "actual_spending": 23000000,
+    "utilization_rate": "92.00"
+  },
+  {
+    "transaction_id": "TXN-031",
+    "cost_center": "CC-031",
+    "budget_allocated": 21000000,
+    "actual_spending": 19000000,
+    "utilization_rate": "90.48"
+  },
+  {
+    "transaction_id": "TXN-032",
+    "cost_center": "CC-032",
+    "budget_allocated": 15000000,
+    "actual_spending": 14000000,
+    "utilization_rate": "93.33"
+  },
+  {
+    "transaction_id": "TXN-033",
+    "cost_center": "CC-033",
+    "budget_allocated": 18000000,
+    "actual_spending": 17000000,
+    "utilization_rate": "94.44"
+  },
+  {
+    "transaction_id": "TXN-034",
+    "cost_center": "CC-034",
+    "budget_allocated": 12000000,
+    "actual_spending": 11000000,
+    "utilization_rate": "91.67"
+  },
+  {
+    "transaction_id": "TXN-035",
+    "cost_center": "CC-035",
+    "budget_allocated": 24000000,
+    "actual_spending": 22000000,
+    "utilization_rate": "91.67"
+  },
+  {
+    "transaction_id": "TXN-036",
+    "cost_center": "CC-036",
+    "budget_allocated": 20000000,
+    "actual_spending": 18000000,
+    "utilization_rate": "90.00"
+  },
+  {
+    "transaction_id": "TXN-037",
+    "cost_center": "CC-037",
+    "budget_allocated": 17000000,
+    "actual_spending": 16000000,
+    "utilization_rate": "94.12"
+  },
+  {
+    "transaction_id": "TXN-038",
+    "cost_center": "CC-038",
+    "budget_allocated": 19000000,
+    "actual_spending": 17000000,
+    "utilization_rate": "89.47"
+  },
+  {
+    "transaction_id": "TXN-039",
+    "cost_center": "CC-039",
+    "budget_allocated": 14000000,
+    "actual_spending": 13000000,
+    "utilization_rate": "92.86"
+  },
+  {
+    "transaction_id": "TXN-040",
+    "cost_center": "CC-040",
+    "budget_allocated": 25000000,
+    "actual_spending": 23000000,
+    "utilization_rate": "92.00"
+  },
+  {
+    "transaction_id": "TXN-041",
+    "cost_center": "CC-041",
+    "budget_allocated": 21000000,
+    "actual_spending": 19000000,
+    "utilization_rate": "90.48"
+  },
+  {
+    "transaction_id": "TXN-042",
+    "cost_center": "CC-042",
+    "budget_allocated": 15000000,
+    "actual_spending": 14000000,
+    "utilization_rate": "93.33"
+  },
+  {
+    "transaction_id": "TXN-043",
+    "cost_center": "CC-043",
+    "budget_allocated": 18000000,
+    "actual_spending": 17000000,
+    "utilization_rate": "94.44"
+  },
+  {
+    "transaction_id": "TXN-044",
+    "cost_center": "CC-044",
+    "budget_allocated": 12000000,
+    "actual_spending": 11000000,
+    "utilization_rate": "91.67"
+  },
+  {
+    "transaction_id": "TXN-045",
+    "cost_center": "CC-045",
+    "budget_allocated": 24000000,
+    "actual_spending": 22000000,
+    "utilization_rate": "91.67"
+  },
+  {
+    "transaction_id": "TXN-046",
+    "cost_center": "CC-046",
+    "budget_allocated": 20000000,
+    "actual_spending": 18000000,
+    "utilization_rate": "90.00"
+  },
+  {
+    "transaction_id": "TXN-047",
+    "cost_center": "CC-047",
+    "budget_allocated": 17000000,
+    "actual_spending": 16000000,
+    "utilization_rate": "94.12"
+  },
+  {
+    "transaction_id": "TXN-048",
+    "cost_center": "CC-048",
+    "budget_allocated": 19000000,
+    "actual_spending": 17000000,
+    "utilization_rate": "89.47"
+  },
+  {
+    "transaction_id": "TXN-049",
+    "cost_center": "CC-049",
+    "budget_allocated": 14000000,
+    "actual_spending": 13000000,
+    "utilization_rate": "92.86"
+  },
+  {
+    "transaction_id": "TXN-050",
+    "cost_center": "CC-050",
+    "budget_allocated": 25000000,
+    "actual_spending": 23000000,
+    "utilization_rate": "92.00"
+  },
+  {
+    "transaction_id": "TXN-001",
+    "cost_center": "CC-001",
+    "past_spendings": [
+      17000000,
+      16000000,
+      17500000
+    ],
+    "forecasted_spending": "16833333.33"
+  },
+  {
+    "transaction_id": "TXN-002",
+    "cost_center": "CC-002",
+    "past_spendings": [
+      13500000,
+      12500000,
+      13000000
+    ],
+    "forecasted_spending": "13000000.00"
+  },
+  {
+    "transaction_id": "TXN-003",
+    "cost_center": "CC-003",
+    "past_spendings": [
+      15000000,
+      14500000,
+      16000000
+    ],
+    "forecasted_spending": "15166666.67"
+  },
+  {
+    "transaction_id": "TXN-004",
+    "cost_center": "CC-004",
+    "past_spendings": [
+      11500000,
+      12000000,
+      11000000
+    ],
+    "forecasted_spending": "11500000.00"
+  },
+  {
+    "transaction_id": "TXN-005",
+    "cost_center": "CC-005",
+    "past_spendings": [
+      22000000,
+      21000000,
+      23000000
+    ],
+    "forecasted_spending": "22000000.00"
+  },
+  {
+    "transaction_id": "TXN-006",
+    "cost_center": "CC-006",
+    "past_spendings": [
+      17000000,
+      16500000,
+      16000000
+    ],
+    "forecasted_spending": "16500000.00"
+  },
+  {
+    "transaction_id": "TXN-007",
+    "cost_center": "CC-007",
+    "past_spendings": [
+      18500000,
+      19000000,
+      18000000
+    ],
+    "forecasted_spending": "18500000.00"
+  },
+  {
+    "transaction_id": "TXN-008",
+    "cost_center": "CC-008",
+    "past_spendings": [
+      14000000,
+      13500000,
+      13000000
+    ],
+    "forecasted_spending": "13500000.00"
+  },
+  {
+    "transaction_id": "TXN-009",
+    "cost_center": "CC-009",
+    "past_spendings": [
+      15000000,
+      14500000,
+      15500000
+    ],
+    "forecasted_spending": "15000000.00"
+  },
+  {
+    "transaction_id": "TXN-010",
+    "cost_center": "CC-010",
+    "past_spendings": [
+      23000000,
+      22000000,
+      25000000
+    ],
+    "forecasted_spending": "23333333.33"
+  },
+  {
+    "transaction_id": "TXN-011",
+    "cost_center": "CC-011",
+    "past_spendings": [
+      18000000,
+      17500000,
+      17000000
+    ],
+    "forecasted_spending": "17500000.00"
+  },
+  {
+    "transaction_id": "TXN-012",
+    "cost_center": "CC-012",
+    "past_spendings": [
+      16000000,
+      15500000,
+      16500000
+    ],
+    "forecasted_spending": "16000000.00"
+  },
+  {
+    "transaction_id": "TXN-013",
+    "cost_center": "CC-013",
+    "past_spendings": [
+      13500000,
+      13000000,
+      12500000
+    ],
+    "forecasted_spending": "13000000.00"
+  },
+  {
+    "transaction_id": "TXN-014",
+    "cost_center": "CC-014",
+    "past_spendings": [
+      15000000,
+      16000000,
+      15500000
+    ],
+    "forecasted_spending": "15500000.00"
+  },
+  {
+    "transaction_id": "TXN-015",
+    "cost_center": "CC-015",
+    "past_spendings": [
+      25000000,
+      24000000,
+      23000000
+    ],
+    "forecasted_spending": "24000000.00"
+  },
+  {
+    "transaction_id": "TXN-016",
+    "cost_center": "CC-016",
+    "past_spendings": [
+      19500000,
+      19000000,
+      20000000
+    ],
+    "forecasted_spending": "19500000.00"
+  },
+  {
+    "transaction_id": "TXN-017",
+    "cost_center": "CC-017",
+    "past_spendings": [
+      17000000,
+      17500000,
+      16000000
+    ],
+    "forecasted_spending": "16833333.33"
+  },
+  {
+    "transaction_id": "TXN-018",
+    "cost_center": "CC-018",
+    "past_spendings": [
+      12500000,
+      13000000,
+      14000000
+    ],
+    "forecasted_spending": "13166666.67"
+  },
+  {
+    "transaction_id": "TXN-019",
+    "cost_center": "CC-019",
+    "past_spendings": [
+      16500000,
+      16000000,
+      17000000
+    ],
+    "forecasted_spending": "16500000.00"
+  },
+  {
+    "transaction_id": "TXN-020",
+    "cost_center": "CC-020",
+    "past_spendings": [
+      23000000,
+      24000000,
+      25000000
+    ],
+    "forecasted_spending": "24000000.00"
+  },
+  {
+    "transaction_id": "TXN-021",
+    "cost_center": "CC-021",
+    "past_spendings": [
+      20000000,
+      21000000,
+      22000000
+    ],
+    "forecasted_spending": "21000000.00"
+  },
+  {
+    "transaction_id": "TXN-022",
+    "cost_center": "CC-022",
+    "past_spendings": [
+      14000000,
+      13500000,
+      14500000
+    ],
+    "forecasted_spending": "14000000.00"
+  },
+  {
+    "transaction_id": "TXN-023",
+    "cost_center": "CC-023",
+    "past_spendings": [
+      15000000,
+      16000000,
+      17000000
+    ],
+    "forecasted_spending": "16000000.00"
+  },
+  {
+    "transaction_id": "TXN-024",
+    "cost_center": "CC-024",
+    "past_spendings": [
+      11000000,
+      11500000,
+      12000000
+    ],
+    "forecasted_spending": "11500000.00"
+  },
+  {
+    "transaction_id": "TXN-025",
+    "cost_center": "CC-025",
+    "past_spendings": [
+      25000000,
+      23000000,
+      24000000
+    ],
+    "forecasted_spending": "24000000.00"
+  },
+  {
+    "transaction_id": "TXN-026",
+    "cost_center": "CC-026",
+    "past_spendings": [
+      19000000,
+      19500000,
+      20000000
+    ],
+    "forecasted_spending": "19500000.00"
+  },
+  {
+    "transaction_id": "TXN-027",
+    "cost_center": "CC-027",
+    "past_spendings": [
+      16000000,
+      16500000,
+      17000000
+    ],
+    "forecasted_spending": "16500000.00"
+  },
+  {
+    "transaction_id": "TXN-028",
+    "cost_center": "CC-028",
+    "past_spendings": [
+      17000000,
+      18000000,
+      17500000
+    ],
+    "forecasted_spending": "17500000.00"
+  },
+  {
+    "transaction_id": "TXN-029",
+    "cost_center": "CC-029",
+    "past_spendings": [
+      13000000,
+      12500000,
+      13500000
+    ],
+    "forecasted_spending": "13000000.00"
+  },
+  {
+    "transaction_id": "TXN-030",
+    "cost_center": "CC-030",
+    "past_spendings": [
+      24000000,
+      25000000,
+      26000000
+    ],
+    "forecasted_spending": "25000000.00"
+  },
+  {
+    "transaction_id": "TXN-031",
+    "cost_center": "CC-031",
+    "past_spendings": [
+      18500000,
+      19000000,
+      19500000
+    ],
+    "forecasted_spending": "19000000.00"
+  },
+  {
+    "transaction_id": "TXN-032",
+    "cost_center": "CC-032",
+    "past_spendings": [
+      14000000,
+      14500000,
+      13500000
+    ],
+    "forecasted_spending": "14000000.00"
+  },
+  {
+    "transaction_id": "TXN-033",
+    "cost_center": "CC-033",
+    "past_spendings": [
+      16500000,
+      17000000,
+      17500000
+    ],
+    "forecasted_spending": "17000000.00"
+  },
+  {
+    "transaction_id": "TXN-034",
+    "cost_center": "CC-034",
+    "past_spendings": [
+      11000000,
+      11500000,
+      12000000
+    ],
+    "forecasted_spending": "11500000.00"
+  },
+  {
+    "transaction_id": "TXN-035",
+    "cost_center": "CC-035",
+    "past_spendings": [
+      23000000,
+      24000000,
+      25000000
+    ],
+    "forecasted_spending": "24000000.00"
+  },
+  {
+    "transaction_id": "TXN-036",
+    "cost_center": "CC-036",
+    "past_spendings": [
+      19000000,
+      19500000,
+      20000000
+    ],
+    "forecasted_spending": "19500000.00"
+  },
+  {
+    "transaction_id": "TXN-037",
+    "cost_center": "CC-037",
+    "past_spendings": [
+      15500000,
+      16000000,
+      16500000
+    ],
+    "forecasted_spending": "16000000.00"
+  },
+  {
+    "transaction_id": "TXN-038",
+    "cost_center": "CC-038",
+    "past_spendings": [
+      17000000,
+      18000000,
+      17500000
+    ],
+    "forecasted_spending": "17500000.00"
+  },
+  {
+    "transaction_id": "TXN-039",
+    "cost_center": "CC-039",
+    "past_spendings": [
+      13000000,
+      12500000,
+      13500000
+    ],
+    "forecasted_spending": "13000000.00"
+  },
+  {
+    "transaction_id": "TXN-040",
+    "cost_center": "CC-040",
+    "past_spendings": [
+      24000000,
+      25000000,
+      26000000
+    ],
+    "forecasted_spending": "25000000.00"
+  },
+  {
+    "transaction_id": "TXN-041",
+    "cost_center": "CC-041",
+    "past_spendings": [
+      18500000,
+      19000000,
+      19500000
+    ],
+    "forecasted_spending": "19000000.00"
+  },
+  {
+    "transaction_id": "TXN-042",
+    "cost_center": "CC-042",
+    "past_spendings": [
+      14000000,
+      14500000,
+      13500000
+    ],
+    "forecasted_spending": "14000000.00"
+  },
+  {
+    "transaction_id": "TXN-043",
+    "cost_center": "CC-043",
+    "past_spendings": [
+      16500000,
+      17000000,
+      17500000
+    ],
+    "forecasted_spending": "17000000.00"
+  },
+  {
+    "transaction_id": "TXN-044",
+    "cost_center": "CC-044",
+    "past_spendings": [
+      11000000,
+      11500000,
+      12000000
+    ],
+    "forecasted_spending": "11500000.00"
+  },
+  {
+    "transaction_id": "TXN-045",
+    "cost_center": "CC-045",
+    "past_spendings": [
+      23000000,
+      24000000,
+      25000000
+    ],
+    "forecasted_spending": "24000000.00"
+  },
+  {
+    "transaction_id": "TXN-046",
+    "cost_center": "CC-046",
+    "past_spendings": [
+      19000000,
+      19500000,
+      20000000
+    ],
+    "forecasted_spending": "19500000.00"
+  },
+  {
+    "transaction_id": "TXN-047",
+    "cost_center": "CC-047",
+    "past_spendings": [
+      15500000,
+      16000000,
+      16500000
+    ],
+    "forecasted_spending": "16000000.00"
+  },
+  {
+    "transaction_id": "TXN-048",
+    "cost_center": "CC-048",
+    "past_spendings": [
+      17000000,
+      18000000,
+      17500000
+    ],
+    "forecasted_spending": "17500000.00"
+  },
+  {
+    "transaction_id": "TXN-049",
+    "cost_center": "CC-049",
+    "past_spendings": [
+      13000000,
+      12500000,
+      13500000
+    ],
+    "forecasted_spending": "13000000.00"
+  },
+  {
+    "transaction_id": "TXN-050",
+    "cost_center": "CC-050",
+    "past_spendings": [
+      24000000,
+      25000000,
+      26000000
+    ],
+    "forecasted_spending": "25000000.00"
+  },
+  {
+    "transaction_id": "TXN-001",
+    "cost_center": "CC-001",
+    "fixed_costs": 7000000,
+    "revenue_per_unit": 50000,
+    "variable_cost_per_unit": 20000,
+    "break_even_point_units": "233.33"
+  },
+  {
+    "transaction_id": "TXN-002",
+    "cost_center": "CC-002",
+    "fixed_costs": 5000000,
+    "revenue_per_unit": 60000,
+    "variable_cost_per_unit": 25000,
+    "break_even_point_units": "142.86"
+  },
+  {
+    "transaction_id": "TXN-003",
+    "cost_center": "CC-003",
+    "fixed_costs": 8000000,
+    "revenue_per_unit": 55000,
+    "variable_cost_per_unit": 22000,
+    "break_even_point_units": "242.42"
+  },
+  {
+    "transaction_id": "TXN-004",
+    "cost_center": "CC-004",
+    "fixed_costs": 5000000,
+    "revenue_per_unit": 40000,
+    "variable_cost_per_unit": 15000,
+    "break_even_point_units": "200.00"
+  },
+  {
+    "transaction_id": "TXN-005",
+    "cost_center": "CC-005",
+    "fixed_costs": 10000000,
+    "revenue_per_unit": 70000,
+    "variable_cost_per_unit": 30000,
+    "break_even_point_units": "250.00"
+  },
+  {
+    "transaction_id": "TXN-006",
+    "cost_center": "CC-006",
+    "fixed_costs": 6500000,
+    "revenue_per_unit": 55000,
+    "variable_cost_per_unit": 18000,
+    "break_even_point_units": "175.68"
+  },
+  {
+    "transaction_id": "TXN-007",
+    "cost_center": "CC-007",
+    "fixed_costs": 9000000,
+    "revenue_per_unit": 60000,
+    "variable_cost_per_unit": 23000,
+    "break_even_point_units": "243.24"
+  },
+  {
+    "transaction_id": "TXN-008",
+    "cost_center": "CC-008",
+    "fixed_costs": 4500000,
+    "revenue_per_unit": 49000,
+    "variable_cost_per_unit": 16000,
+    "break_even_point_units": "136.36"
+  },
+  {
+    "transaction_id": "TXN-009",
+    "cost_center": "CC-009",
+    "fixed_costs": 5500000,
+    "revenue_per_unit": 52000,
+    "variable_cost_per_unit": 20000,
+    "break_even_point_units": "171.88"
+  },
+  {
+    "transaction_id": "TXN-010",
+    "cost_center": "CC-010",
+    "fixed_costs": 9500000,
+    "revenue_per_unit": 75000,
+    "variable_cost_per_unit": 32000,
+    "break_even_point_units": "220.93"
+  },
+  {
+    "transaction_id": "TXN-011",
+    "cost_center": "CC-011",
+    "fixed_costs": 8000000,
+    "revenue_per_unit": 51000,
+    "variable_cost_per_unit": 19000,
+    "break_even_point_units": "250.00"
+  },
+  {
+    "transaction_id": "TXN-012",
+    "cost_center": "CC-012",
+    "fixed_costs": 7500000,
+    "revenue_per_unit": 58000,
+    "variable_cost_per_unit": 21000,
+    "break_even_point_units": "202.70"
+  },
+  {
+    "transaction_id": "TXN-013",
+    "cost_center": "CC-013",
+    "fixed_costs": 6000000,
+    "revenue_per_unit": 45000,
+    "variable_cost_per_unit": 18000,
+    "break_even_point_units": "222.22"
+  },
+  {
+    "transaction_id": "TXN-014",
+    "cost_center": "CC-014",
+    "fixed_costs": 6000000,
+    "revenue_per_unit": 56000,
+    "variable_cost_per_unit": 22000,
+    "break_even_point_units": "176.47"
+  },
+  {
+    "transaction_id": "TXN-015",
+    "cost_center": "CC-015",
+    "fixed_costs": 10500000,
+    "revenue_per_unit": 80000,
+    "variable_cost_per_unit": 33000,
+    "break_even_point_units": "223.40"
+  },
+  {
+    "transaction_id": "TXN-016",
+    "cost_center": "CC-016",
+    "fixed_costs": 8500000,
+    "revenue_per_unit": 59000,
+    "variable_cost_per_unit": 25000,
+    "break_even_point_units": "250.00"
+  },
+  {
+    "transaction_id": "TXN-017",
+    "cost_center": "CC-017",
+    "fixed_costs": 7500000,
+    "revenue_per_unit": 54000,
+    "variable_cost_per_unit": 19000,
+    "break_even_point_units": "214.29"
+  },
+  {
+    "transaction_id": "TXN-018",
+    "cost_center": "CC-018",
+    "fixed_costs": 5000000,
+    "revenue_per_unit": 46000,
+    "variable_cost_per_unit": 16500,
+    "break_even_point_units": "169.49"
+  },
+  {
+    "transaction_id": "TXN-019",
+    "cost_center": "CC-019",
+    "fixed_costs": 7000000,
+    "revenue_per_unit": 57000,
+    "variable_cost_per_unit": 21000,
+    "break_even_point_units": "194.44"
+  },
+  {
+    "transaction_id": "TXN-020",
+    "cost_center": "CC-020",
+    "fixed_costs": 11000000,
+    "revenue_per_unit": 77000,
+    "variable_cost_per_unit": 29000,
+    "break_even_point_units": "229.17"
+  },
+  {
+    "transaction_id": "TXN-021",
+    "cost_center": "CC-021",
+    "fixed_costs": 9500000,
+    "revenue_per_unit": 62000,
+    "variable_cost_per_unit": 27000,
+    "break_even_point_units": "271.43"
+  },
+  {
+    "transaction_id": "TXN-022",
+    "cost_center": "CC-022",
+    "fixed_costs": 6000000,
+    "revenue_per_unit": 50000,
+    "variable_cost_per_unit": 19000,
+    "break_even_point_units": "193.55"
+  },
+  {
+    "transaction_id": "TXN-023",
+    "cost_center": "CC-023",
+    "fixed_costs": 8000000,
+    "revenue_per_unit": 54000,
+    "variable_cost_per_unit": 22000,
+    "break_even_point_units": "250.00"
+  },
+  {
+    "transaction_id": "TXN-024",
+    "cost_center": "CC-024",
+    "fixed_costs": 4500000,
+    "revenue_per_unit": 42000,
+    "variable_cost_per_unit": 15000,
+    "break_even_point_units": "166.67"
+  },
+  {
+    "transaction_id": "TXN-025",
+    "cost_center": "CC-025",
+    "fixed_costs": 10500000,
+    "revenue_per_unit": 77000,
+    "variable_cost_per_unit": 31000,
+    "break_even_point_units": "228.26"
+  },
+  {
+    "transaction_id": "TXN-026",
+    "cost_center": "CC-026",
+    "fixed_costs": 9000000,
+    "revenue_per_unit": 59000,
+    "variable_cost_per_unit": 23000,
+    "break_even_point_units": "250.00"
+  },
+  {
+    "transaction_id": "TXN-027",
+    "cost_center": "CC-027",
+    "fixed_costs": 6000000,
+    "revenue_per_unit": 52000,
+    "variable_cost_per_unit": 20000,
+    "break_even_point_units": "187.50"
+  },
+  {
+    "transaction_id": "TXN-028",
+    "cost_center": "CC-028",
+    "fixed_costs": 8000000,
+    "revenue_per_unit": 57000,
+    "variable_cost_per_unit": 21000,
+    "break_even_point_units": "222.22"
+  },
+  {
+    "transaction_id": "TXN-029",
+    "cost_center": "CC-029",
+    "fixed_costs": 5000000,
+    "revenue_per_unit": 46000,
+    "variable_cost_per_unit": 17000,
+    "break_even_point_units": "172.41"
+  },
+  {
+    "transaction_id": "TXN-030",
+    "cost_center": "CC-030",
+    "fixed_costs": 11000000,
+    "revenue_per_unit": 79000,
+    "variable_cost_per_unit": 30000,
+    "break_even_point_units": "224.49"
+  },
+  {
+    "transaction_id": "TXN-031",
+    "cost_center": "CC-031",
+    "fixed_costs": 8500000,
+    "revenue_per_unit": 60000,
+    "variable_cost_per_unit": 25000,
+    "break_even_point_units": "242.86"
+  },
+  {
+    "transaction_id": "TXN-032",
+    "cost_center": "CC-032",
+    "fixed_costs": 6000000,
+    "revenue_per_unit": 51000,
+    "variable_cost_per_unit": 19000,
+    "break_even_point_units": "187.50"
+  },
+  {
+    "transaction_id": "TXN-033",
+    "cost_center": "CC-033",
+    "fixed_costs": 8000000,
+    "revenue_per_unit": 55000,
+    "variable_cost_per_unit": 22000,
+    "break_even_point_units": "242.42"
+  },
+  {
+    "transaction_id": "TXN-034",
+    "cost_center": "CC-034",
+    "fixed_costs": 4500000,
+    "revenue_per_unit": 43000,
+    "variable_cost_per_unit": 16000,
+    "break_even_point_units": "166.67"
+  },
+  {
+    "transaction_id": "TXN-035",
+    "cost_center": "CC-035",
+    "fixed_costs": 10000000,
+    "revenue_per_unit": 80000,
+    "variable_cost_per_unit": 31000,
+    "break_even_point_units": "204.08"
+  },
+  {
+    "transaction_id": "TXN-036",
+    "cost_center": "CC-036",
+    "fixed_costs": 8500000,
+    "revenue_per_unit": 61000,
+    "variable_cost_per_unit": 24000,
+    "break_even_point_units": "229.73"
+  },
+  {
+    "transaction_id": "TXN-037",
+    "cost_center": "CC-037",
+    "fixed_costs": 8000000,
+    "revenue_per_unit": 55000,
+    "variable_cost_per_unit": 21000,
+    "break_even_point_units": "235.29"
+  },
+  {
+    "transaction_id": "TXN-038",
+    "cost_center": "CC-038",
+    "fixed_costs": 8000000,
+    "revenue_per_unit": 58000,
+    "variable_cost_per_unit": 23000,
+    "break_even_point_units": "228.57"
+  },
+  {
+    "transaction_id": "TXN-039",
+    "cost_center": "CC-039",
+    "fixed_costs": 5000000,
+    "revenue_per_unit": 46000,
+    "variable_cost_per_unit": 17000,
+    "break_even_point_units": "172.41"
+  },
+  {
+    "transaction_id": "TXN-040",
+    "cost_center": "CC-040",
+    "fixed_costs": 11000000,
+    "revenue_per_unit": 79000,
+    "variable_cost_per_unit": 30000,
+    "break_even_point_units": "224.49"
+  },
+  {
+    "transaction_id": "TXN-041",
+    "cost_center": "CC-041",
+    "fixed_costs": 8500000,
+    "revenue_per_unit": 60000,
+    "variable_cost_per_unit": 25000,
+    "break_even_point_units": "242.86"
+  },
+  {
+    "transaction_id": "TXN-042",
+    "cost_center": "CC-042",
+    "fixed_costs": 6000000,
+    "revenue_per_unit": 51000,
+    "variable_cost_per_unit": 19000,
+    "break_even_point_units": "187.50"
+  },
+  {
+    "transaction_id": "TXN-043",
+    "cost_center": "CC-043",
+    "fixed_costs": 8000000,
+    "revenue_per_unit": 55000,
+    "variable_cost_per_unit": 22000,
+    "break_even_point_units": "242.42"
+  },
+  {
+    "transaction_id": "TXN-044",
+    "cost_center": "CC-044",
+    "fixed_costs": 4500000,
+    "revenue_per_unit": 43000,
+    "variable_cost_per_unit": 16000,
+    "break_even_point_units": "166.67"
+  },
+  {
+    "transaction_id": "TXN-045",
+    "cost_center": "CC-045",
+    "fixed_costs": 10000000,
+    "revenue_per_unit": 80000,
+    "variable_cost_per_unit": 31000,
+    "break_even_point_units": "204.08"
+  },
+  {
+    "transaction_id": "TXN-046",
+    "cost_center": "CC-046",
+    "fixed_costs": 8500000,
+    "revenue_per_unit": 61000,
+    "variable_cost_per_unit": 24000,
+    "break_even_point_units": "229.73"
+  },
+  {
+    "transaction_id": "TXN-047",
+    "cost_center": "CC-047",
+    "fixed_costs": 8000000,
+    "revenue_per_unit": 55000,
+    "variable_cost_per_unit": 21000,
+    "break_even_point_units": "235.29"
+  },
+  {
+    "transaction_id": "TXN-048",
+    "cost_center": "CC-048",
+    "fixed_costs": 8000000,
+    "revenue_per_unit": 58000,
+    "variable_cost_per_unit": 23000,
+    "break_even_point_units": "228.57"
+  },
+  {
+    "transaction_id": "TXN-049",
+    "cost_center": "CC-049",
+    "fixed_costs": 5000000,
+    "revenue_per_unit": 46000,
+    "variable_cost_per_unit": 17000,
+    "break_even_point_units": "172.41"
+  },
+  {
+    "transaction_id": "TXN-050",
+    "cost_center": "CC-050",
+    "fixed_costs": 11000000,
+    "revenue_per_unit": 79000,
+    "variable_cost_per_unit": 30000,
+    "break_even_point_units": "224.49"
+  },
+  {
+    "transaction_id": "TXN-001",
+    "cost_center": "CC-001",
+    "budget_allocated": 20000000,
+    "scenarios": [
+      {
+        "percentage": "80%",
+        "adjusted_budget": "16000000.00"
+      },
+      {
+        "percentage": "100%",
+        "adjusted_budget": "20000000.00"
+      },
+      {
+        "percentage": "120%",
+        "adjusted_budget": "24000000.00"
+      }
+    ]
+  },
+  {
+    "transaction_id": "TXN-002",
+    "cost_center": "CC-002",
+    "budget_allocated": 15000000,
+    "scenarios": [
+      {
+        "percentage": "80%",
+        "adjusted_budget": "12000000.00"
+      },
+      {
+        "percentage": "100%",
+        "adjusted_budget": "15000000.00"
+      },
+      {
+        "percentage": "120%",
+        "adjusted_budget": "18000000.00"
+      }
+    ]
+  },
+  {
+    "transaction_id": "TXN-003",
+    "cost_center": "CC-003",
+    "budget_allocated": 18000000,
+    "scenarios": [
+      {
+        "percentage": "80%",
+        "adjusted_budget": "14400000.00"
+      },
+      {
+        "percentage": "100%",
+        "adjusted_budget": "18000000.00"
+      },
+      {
+        "percentage": "120%",
+        "adjusted_budget": "21600000.00"
+      }
+    ]
+  },
+  {
+    "transaction_id": "TXN-004",
+    "cost_center": "CC-004",
+    "budget_allocated": 12000000,
+    "scenarios": [
+      {
+        "percentage": "80%",
+        "adjusted_budget": "9600000.00"
+      },
+      {
+        "percentage": "100%",
+        "adjusted_budget": "12000000.00"
+      },
+      {
+        "percentage": "120%",
+        "adjusted_budget": "14400000.00"
+      }
+    ]
+  },
+  {
+    "transaction_id": "TXN-005",
+    "cost_center": "CC-005",
+    "budget_allocated": 25000000,
+    "scenarios": [
+      {
+        "percentage": "80%",
+        "adjusted_budget": "20000000.00"
+      },
+      {
+        "percentage": "100%",
+        "adjusted_budget": "25000000.00"
+      },
+      {
+        "percentage": "120%",
+        "adjusted_budget": "30000000.00"
+      }
+    ]
+  },
+  {
+    "transaction_id": "TXN-006",
+    "cost_center": "CC-006",
+    "budget_allocated": 18000000,
+    "scenarios": [
+      {
+        "percentage": "80%",
+        "adjusted_budget": "14400000.00"
+      },
+      {
+        "percentage": "100%",
+        "adjusted_budget": "18000000.00"
+      },
+      {
+        "percentage": "120%",
+        "adjusted_budget": "21600000.00"
+      }
+    ]
+  },
+  {
+    "transaction_id": "TXN-007",
+    "cost_center": "CC-007",
+    "budget_allocated": 20000000,
+    "scenarios": [
+      {
+        "percentage": "80%",
+        "adjusted_budget": "16000000.00"
+      },
+      {
+        "percentage": "100%",
+        "adjusted_budget": "20000000.00"
+      },
+      {
+        "percentage": "120%",
+        "adjusted_budget": "24000000.00"
+      }
+    ]
+  },
+  {
+    "transaction_id": "TXN-008",
+    "cost_center": "CC-008",
+    "budget_allocated": 15000000,
+    "scenarios": [
+      {
+        "percentage": "80%",
+        "adjusted_budget": "12000000.00"
+      },
+      {
+        "percentage": "100%",
+        "adjusted_budget": "15000000.00"
+      },
+      {
+        "percentage": "120%",
+        "adjusted_budget": "18000000.00"
+      }
+    ]
+  },
+  {
+    "transaction_id": "TXN-009",
+    "cost_center": "CC-009",
+    "budget_allocated": 16000000,
+    "scenarios": [
+      {
+        "percentage": "80%",
+        "adjusted_budget": "12800000.00"
+      },
+      {
+        "percentage": "100%",
+        "adjusted_budget": "16000000.00"
+      },
+      {
+        "percentage": "120%",
+        "adjusted_budget": "19200000.00"
+      }
+    ]
+  },
+  {
+    "transaction_id": "TXN-010",
+    "cost_center": "CC-010",
+    "budget_allocated": 24000000,
+    "scenarios": [
+      {
+        "percentage": "80%",
+        "adjusted_budget": "19200000.00"
+      },
+      {
+        "percentage": "100%",
+        "adjusted_budget": "24000000.00"
+      },
+      {
+        "percentage": "120%",
+        "adjusted_budget": "28800000.00"
+      }
+    ]
+  },
+  {
+    "transaction_id": "TXN-011",
+    "cost_center": "CC-011",
+    "budget_allocated": 19000000,
+    "scenarios": [
+      {
+        "percentage": "80%",
+        "adjusted_budget": "15200000.00"
+      },
+      {
+        "percentage": "100%",
+        "adjusted_budget": "19000000.00"
+      },
+      {
+        "percentage": "120%",
+        "adjusted_budget": "22800000.00"
+      }
+    ]
+  },
+  {
+    "transaction_id": "TXN-012",
+    "cost_center": "CC-012",
+    "budget_allocated": 17000000,
+    "scenarios": [
+      {
+        "percentage": "80%",
+        "adjusted_budget": "13600000.00"
+      },
+      {
+        "percentage": "100%",
+        "adjusted_budget": "17000000.00"
+      },
+      {
+        "percentage": "120%",
+        "adjusted_budget": "20400000.00"
+      }
+    ]
+  },
+  {
+    "transaction_id": "TXN-013",
+    "cost_center": "CC-013",
+    "budget_allocated": 14000000,
+    "scenarios": [
+      {
+        "percentage": "80%",
+        "adjusted_budget": "11200000.00"
+      },
+      {
+        "percentage": "100%",
+        "adjusted_budget": "14000000.00"
+      },
+      {
+        "percentage": "120%",
+        "adjusted_budget": "16800000.00"
+      }
+    ]
+  },
+  {
+    "transaction_id": "TXN-014",
+    "cost_center": "CC-014",
+    "budget_allocated": 17000000,
+    "scenarios": [
+      {
+        "percentage": "80%",
+        "adjusted_budget": "13600000.00"
+      },
+      {
+        "percentage": "100%",
+        "adjusted_budget": "17000000.00"
+      },
+      {
+        "percentage": "120%",
+        "adjusted_budget": "20400000.00"
+      }
+    ]
+  },
+  {
+    "transaction_id": "TXN-015",
+    "cost_center": "CC-015",
+    "budget_allocated": 26000000,
+    "scenarios": [
+      {
+        "percentage": "80%",
+        "adjusted_budget": "20800000.00"
+      },
+      {
+        "percentage": "100%",
+        "adjusted_budget": "26000000.00"
+      },
+      {
+        "percentage": "120%",
+        "adjusted_budget": "31200000.00"
+      }
+    ]
+  },
+  {
+    "transaction_id": "TXN-016",
+    "cost_center": "CC-016",
+    "budget_allocated": 21000000,
+    "scenarios": [
+      {
+        "percentage": "80%",
+        "adjusted_budget": "16800000.00"
+      },
+      {
+        "percentage": "100%",
+        "adjusted_budget": "21000000.00"
+      },
+      {
+        "percentage": "120%",
+        "adjusted_budget": "25200000.00"
+      }
+    ]
+  },
+  {
+    "transaction_id": "TXN-017",
+    "cost_center": "CC-017",
+    "budget_allocated": 19000000,
+    "scenarios": [
+      {
+        "percentage": "80%",
+        "adjusted_budget": "15200000.00"
+      },
+      {
+        "percentage": "100%",
+        "adjusted_budget": "19000000.00"
+      },
+      {
+        "percentage": "120%",
+        "adjusted_budget": "22800000.00"
+      }
+    ]
+  },
+  {
+    "transaction_id": "TXN-018",
+    "cost_center": "CC-018",
+    "budget_allocated": 13000000,
+    "scenarios": [
+      {
+        "percentage": "80%",
+        "adjusted_budget": "10400000.00"
+      },
+      {
+        "percentage": "100%",
+        "adjusted_budget": "13000000.00"
+      },
+      {
+        "percentage": "120%",
+        "adjusted_budget": "15600000.00"
+      }
+    ]
+  },
+  {
+    "transaction_id": "TXN-019",
+    "cost_center": "CC-019",
+    "budget_allocated": 18000000,
+    "scenarios": [
+      {
+        "percentage": "80%",
+        "adjusted_budget": "14400000.00"
+      },
+      {
+        "percentage": "100%",
+        "adjusted_budget": "18000000.00"
+      },
+      {
+        "percentage": "120%",
+        "adjusted_budget": "21600000.00"
+      }
+    ]
+  },
+  {
+    "transaction_id": "TXN-020",
+    "cost_center": "CC-020",
+    "budget_allocated": 25000000,
+    "scenarios": [
+      {
+        "percentage": "80%",
+        "adjusted_budget": "20000000.00"
+      },
+      {
+        "percentage": "100%",
+        "adjusted_budget": "25000000.00"
+      },
+      {
+        "percentage": "120%",
+        "adjusted_budget": "30000000.00"
+      }
+    ]
+  },
+  {
+    "transaction_id": "TXN-021",
+    "cost_center": "CC-021",
+    "budget_allocated": 23000000,
+    "scenarios": [
+      {
+        "percentage": "80%",
+        "adjusted_budget": "18400000.00"
+      },
+      {
+        "percentage": "100%",
+        "adjusted_budget": "23000000.00"
+      },
+      {
+        "percentage": "120%",
+        "adjusted_budget": "27600000.00"
+      }
+    ]
+  },
+  {
+    "transaction_id": "TXN-022",
+    "cost_center": "CC-022",
+    "budget_allocated": 15000000,
+    "scenarios": [
+      {
+        "percentage": "80%",
+        "adjusted_budget": "12000000.00"
+      },
+      {
+        "percentage": "100%",
+        "adjusted_budget": "15000000.00"
+      },
+      {
+        "percentage": "120%",
+        "adjusted_budget": "18000000.00"
+      }
+    ]
+  },
+  {
+    "transaction_id": "TXN-023",
+    "cost_center": "CC-023",
+    "budget_allocated": 18000000,
+    "scenarios": [
+      {
+        "percentage": "80%",
+        "adjusted_budget": "14400000.00"
+      },
+      {
+        "percentage": "100%",
+        "adjusted_budget": "18000000.00"
+      },
+      {
+        "percentage": "120%",
+        "adjusted_budget": "21600000.00"
+      }
+    ]
+  },
+  {
+    "transaction_id": "TXN-024",
+    "cost_center": "CC-024",
+    "budget_allocated": 11000000,
+    "scenarios": [
+      {
+        "percentage": "80%",
+        "adjusted_budget": "8800000.00"
+      },
+      {
+        "percentage": "100%",
+        "adjusted_budget": "11000000.00"
+      },
+      {
+        "percentage": "120%",
+        "adjusted_budget": "13200000.00"
+      }
+    ]
+  },
+  {
+    "transaction_id": "TXN-025",
+    "cost_center": "CC-025",
+    "budget_allocated": 26000000,
+    "scenarios": [
+      {
+        "percentage": "80%",
+        "adjusted_budget": "20800000.00"
+      },
+      {
+        "percentage": "100%",
+        "adjusted_budget": "26000000.00"
+      },
+      {
+        "percentage": "120%",
+        "adjusted_budget": "31200000.00"
+      }
+    ]
+  },
+  {
+    "transaction_id": "TXN-026",
+    "cost_center": "CC-026",
+    "budget_allocated": 20000000,
+    "scenarios": [
+      {
+        "percentage": "80%",
+        "adjusted_budget": "16000000.00"
+      },
+      {
+        "percentage": "100%",
+        "adjusted_budget": "20000000.00"
+      },
+      {
+        "percentage": "120%",
+        "adjusted_budget": "24000000.00"
+      }
+    ]
+  },
+  {
+    "transaction_id": "TXN-027",
+    "cost_center": "CC-027",
+    "budget_allocated": 17000000,
+    "scenarios": [
+      {
+        "percentage": "80%",
+        "adjusted_budget": "13600000.00"
+      },
+      {
+        "percentage": "100%",
+        "adjusted_budget": "17000000.00"
+      },
+      {
+        "percentage": "120%",
+        "adjusted_budget": "20400000.00"
+      }
+    ]
+  },
+  {
+    "transaction_id": "TXN-028",
+    "cost_center": "CC-028",
+    "budget_allocated": 19000000,
+    "scenarios": [
+      {
+        "percentage": "80%",
+        "adjusted_budget": "15200000.00"
+      },
+      {
+        "percentage": "100%",
+        "adjusted_budget": "19000000.00"
+      },
+      {
+        "percentage": "120%",
+        "adjusted_budget": "22800000.00"
+      }
+    ]
+  },
+  {
+    "transaction_id": "TXN-029",
+    "cost_center": "CC-029",
+    "budget_allocated": 14000000,
+    "scenarios": [
+      {
+        "percentage": "80%",
+        "adjusted_budget": "11200000.00"
+      },
+      {
+        "percentage": "100%",
+        "adjusted_budget": "14000000.00"
+      },
+      {
+        "percentage": "120%",
+        "adjusted_budget": "16800000.00"
+      }
+    ]
+  },
+  {
+    "transaction_id": "TXN-030",
+    "cost_center": "CC-030",
+    "budget_allocated": 25000000,
+    "scenarios": [
+      {
+        "percentage": "80%",
+        "adjusted_budget": "20000000.00"
+      },
+      {
+        "percentage": "100%",
+        "adjusted_budget": "25000000.00"
+      },
+      {
+        "percentage": "120%",
+        "adjusted_budget": "30000000.00"
+      }
+    ]
+  },
+  {
+    "transaction_id": "TXN-031",
+    "cost_center": "CC-031",
+    "budget_allocated": 21000000,
+    "scenarios": [
+      {
+        "percentage": "80%",
+        "adjusted_budget": "16800000.00"
+      },
+      {
+        "percentage": "100%",
+        "adjusted_budget": "21000000.00"
+      },
+      {
+        "percentage": "120%",
+        "adjusted_budget": "25200000.00"
+      }
+    ]
+  },
+  {
+    "transaction_id": "TXN-032",
+    "cost_center": "CC-032",
+    "budget_allocated": 15000000,
+    "scenarios": [
+      {
+        "percentage": "80%",
+        "adjusted_budget": "12000000.00"
+      },
+      {
+        "percentage": "100%",
+        "adjusted_budget": "15000000.00"
+      },
+      {
+        "percentage": "120%",
+        "adjusted_budget": "18000000.00"
+      }
+    ]
+  },
+  {
+    "transaction_id": "TXN-033",
+    "cost_center": "CC-033",
+    "budget_allocated": 18000000,
+    "scenarios": [
+      {
+        "percentage": "80%",
+        "adjusted_budget": "14400000.00"
+      },
+      {
+        "percentage": "100%",
+        "adjusted_budget": "18000000.00"
+      },
+      {
+        "percentage": "120%",
+        "adjusted_budget": "21600000.00"
+      }
+    ]
+  },
+  {
+    "transaction_id": "TXN-034",
+    "cost_center": "CC-034",
+    "budget_allocated": 12000000,
+    "scenarios": [
+      {
+        "percentage": "80%",
+        "adjusted_budget": "9600000.00"
+      },
+      {
+        "percentage": "100%",
+        "adjusted_budget": "12000000.00"
+      },
+      {
+        "percentage": "120%",
+        "adjusted_budget": "14400000.00"
+      }
+    ]
+  },
+  {
+    "transaction_id": "TXN-035",
+    "cost_center": "CC-035",
+    "budget_allocated": 24000000,
+    "scenarios": [
+      {
+        "percentage": "80%",
+        "adjusted_budget": "19200000.00"
+      },
+      {
+        "percentage": "100%",
+        "adjusted_budget": "24000000.00"
+      },
+      {
+        "percentage": "120%",
+        "adjusted_budget": "28800000.00"
+      }
+    ]
+  },
+  {
+    "transaction_id": "TXN-036",
+    "cost_center": "CC-036",
+    "budget_allocated": 20000000,
+    "scenarios": [
+      {
+        "percentage": "80%",
+        "adjusted_budget": "16000000.00"
+      },
+      {
+        "percentage": "100%",
+        "adjusted_budget": "20000000.00"
+      },
+      {
+        "percentage": "120%",
+        "adjusted_budget": "24000000.00"
+      }
+    ]
+  },
+  {
+    "transaction_id": "TXN-037",
+    "cost_center": "CC-037",
+    "budget_allocated": 17000000,
+    "scenarios": [
+      {
+        "percentage": "80%",
+        "adjusted_budget": "13600000.00"
+      },
+      {
+        "percentage": "100%",
+        "adjusted_budget": "17000000.00"
+      },
+      {
+        "percentage": "120%",
+        "adjusted_budget": "20400000.00"
+      }
+    ]
+  },
+  {
+    "transaction_id": "TXN-038",
+    "cost_center": "CC-038",
+    "budget_allocated": 19000000,
+    "scenarios": [
+      {
+        "percentage": "80%",
+        "adjusted_budget": "15200000.00"
+      },
+      {
+        "percentage": "100%",
+        "adjusted_budget": "19000000.00"
+      },
+      {
+        "percentage": "120%",
+        "adjusted_budget": "22800000.00"
+      }
+    ]
+  },
+  {
+    "transaction_id": "TXN-039",
+    "cost_center": "CC-039",
+    "budget_allocated": 14000000,
+    "scenarios": [
+      {
+        "percentage": "80%",
+        "adjusted_budget": "11200000.00"
+      },
+      {
+        "percentage": "100%",
+        "adjusted_budget": "14000000.00"
+      },
+      {
+        "percentage": "120%",
+        "adjusted_budget": "16800000.00"
+      }
+    ]
+  },
+  {
+    "transaction_id": "TXN-040",
+    "cost_center": "CC-040",
+    "budget_allocated": 25000000,
+    "scenarios": [
+      {
+        "percentage": "80%",
+        "adjusted_budget": "20000000.00"
+      },
+      {
+        "percentage": "100%",
+        "adjusted_budget": "25000000.00"
+      },
+      {
+        "percentage": "120%",
+        "adjusted_budget": "30000000.00"
+      }
+    ]
+  },
+  {
+    "transaction_id": "TXN-041",
+    "cost_center": "CC-041",
+    "budget_allocated": 21000000,
+    "scenarios": [
+      {
+        "percentage": "80%",
+        "adjusted_budget": "16800000.00"
+      },
+      {
+        "percentage": "100%",
+        "adjusted_budget": "21000000.00"
+      },
+      {
+        "percentage": "120%",
+        "adjusted_budget": "25200000.00"
+      }
+    ]
+  },
+  {
+    "transaction_id": "TXN-042",
+    "cost_center": "CC-042",
+    "budget_allocated": 15000000,
+    "scenarios": [
+      {
+        "percentage": "80%",
+        "adjusted_budget": "12000000.00"
+      },
+      {
+        "percentage": "100%",
+        "adjusted_budget": "15000000.00"
+      },
+      {
+        "percentage": "120%",
+        "adjusted_budget": "18000000.00"
+      }
+    ]
+  },
+  {
+    "transaction_id": "TXN-043",
+    "cost_center": "CC-043",
+    "budget_allocated": 18000000,
+    "scenarios": [
+      {
+        "percentage": "80%",
+        "adjusted_budget": "14400000.00"
+      },
+      {
+        "percentage": "100%",
+        "adjusted_budget": "18000000.00"
+      },
+      {
+        "percentage": "120%",
+        "adjusted_budget": "21600000.00"
+      }
+    ]
+  },
+  {
+    "transaction_id": "TXN-044",
+    "cost_center": "CC-044",
+    "budget_allocated": 12000000,
+    "scenarios": [
+      {
+        "percentage": "80%",
+        "adjusted_budget": "9600000.00"
+      },
+      {
+        "percentage": "100%",
+        "adjusted_budget": "12000000.00"
+      },
+      {
+        "percentage": "120%",
+        "adjusted_budget": "14400000.00"
+      }
+    ]
+  },
+  {
+    "transaction_id": "TXN-045",
+    "cost_center": "CC-045",
+    "budget_allocated": 24000000,
+    "scenarios": [
+      {
+        "percentage": "80%",
+        "adjusted_budget": "19200000.00"
+      },
+      {
+        "percentage": "100%",
+        "adjusted_budget": "24000000.00"
+      },
+      {
+        "percentage": "120%",
+        "adjusted_budget": "28800000.00"
+      }
+    ]
+  },
+  {
+    "transaction_id": "TXN-046",
+    "cost_center": "CC-046",
+    "budget_allocated": 20000000,
+    "scenarios": [
+      {
+        "percentage": "80%",
+        "adjusted_budget": "16000000.00"
+      },
+      {
+        "percentage": "100%",
+        "adjusted_budget": "20000000.00"
+      },
+      {
+        "percentage": "120%",
+        "adjusted_budget": "24000000.00"
+      }
+    ]
+  },
+  {
+    "transaction_id": "TXN-047",
+    "cost_center": "CC-047",
+    "budget_allocated": 17000000,
+    "scenarios": [
+      {
+        "percentage": "80%",
+        "adjusted_budget": "13600000.00"
+      },
+      {
+        "percentage": "100%",
+        "adjusted_budget": "17000000.00"
+      },
+      {
+        "percentage": "120%",
+        "adjusted_budget": "20400000.00"
+      }
+    ]
+  },
+  {
+    "transaction_id": "TXN-048",
+    "cost_center": "CC-048",
+    "budget_allocated": 19000000,
+    "scenarios": [
+      {
+        "percentage": "80%",
+        "adjusted_budget": "15200000.00"
+      },
+      {
+        "percentage": "100%",
+        "adjusted_budget": "19000000.00"
+      },
+      {
+        "percentage": "120%",
+        "adjusted_budget": "22800000.00"
+      }
+    ]
+  },
+  {
+    "transaction_id": "TXN-049",
+    "cost_center": "CC-049",
+    "budget_allocated": 14000000,
+    "scenarios": [
+      {
+        "percentage": "80%",
+        "adjusted_budget": "11200000.00"
+      },
+      {
+        "percentage": "100%",
+        "adjusted_budget": "14000000.00"
+      },
+      {
+        "percentage": "120%",
+        "adjusted_budget": "16800000.00"
+      }
+    ]
+  },
+  {
+    "transaction_id": "TXN-050",
+    "cost_center": "CC-050",
+    "budget_allocated": 25000000,
+    "scenarios": [
+      {
+        "percentage": "80%",
+        "adjusted_budget": "20000000.00"
+      },
+      {
+        "percentage": "100%",
+        "adjusted_budget": "25000000.00"
+      },
+      {
+        "percentage": "120%",
+        "adjusted_budget": "30000000.00"
+      }
+    ]
+  },
+  {
+    "transaction_id": "TXN-001",
+    "cost_center": "CC-001",
+    "budget_allocated": 20000000,
+    "actual_spending": 18000000,
+    "variance": "-2000000.00",
+    "comparison": "Under Budget",
+    "percentage_difference": "-10.00%",
+    "status": "Efficient"
+  },
+  {
+    "transaction_id": "TXN-002",
+    "cost_center": "CC-002",
+    "budget_allocated": 15000000,
+    "actual_spending": 14000000,
+    "variance": "-1000000.00",
+    "comparison": "Under Budget",
+    "percentage_difference": "-6.67%",
+    "status": "Efficient"
+  },
+  {
+    "transaction_id": "TXN-003",
+    "cost_center": "CC-003",
+    "budget_allocated": 18000000,
+    "actual_spending": 16000000,
+    "variance": "-2000000.00",
+    "comparison": "Under Budget",
+    "percentage_difference": "-11.11%",
+    "status": "Efficient"
+  },
+  {
+    "transaction_id": "TXN-004",
+    "cost_center": "CC-004",
+    "budget_allocated": 12000000,
+    "actual_spending": 11000000,
+    "variance": "-1000000.00",
+    "comparison": "Under Budget",
+    "percentage_difference": "-8.33%",
+    "status": "Efficient"
+  },
+  {
+    "transaction_id": "TXN-005",
+    "cost_center": "CC-005",
+    "budget_allocated": 25000000,
+    "actual_spending": 23000000,
+    "variance": "-2000000.00",
+    "comparison": "Under Budget",
+    "percentage_difference": "-8.00%",
+    "status": "Efficient"
+  },
+  {
+    "transaction_id": "TXN-006",
+    "cost_center": "CC-006",
+    "budget_allocated": 18000000,
+    "actual_spending": 15000000,
+    "variance": "-3000000.00",
+    "comparison": "Under Budget",
+    "percentage_difference": "-16.67%",
+    "status": "Efficient"
+  },
+  {
+    "transaction_id": "TXN-007",
+    "cost_center": "CC-007",
+    "budget_allocated": 20000000,
+    "actual_spending": 19000000,
+    "variance": "-1000000.00",
+    "comparison": "Under Budget",
+    "percentage_difference": "-5.00%",
+    "status": "Efficient"
+  },
+  {
+    "transaction_id": "TXN-008",
+    "cost_center": "CC-008",
+    "budget_allocated": 15000000,
+    "actual_spending": 14000000,
+    "variance": "-1000000.00",
+    "comparison": "Under Budget",
+    "percentage_difference": "-6.67%",
+    "status": "Efficient"
+  },
+  {
+    "transaction_id": "TXN-009",
+    "cost_center": "CC-009",
+    "budget_allocated": 16000000,
+    "actual_spending": 15000000,
+    "variance": "-1000000.00",
+    "comparison": "Under Budget",
+    "percentage_difference": "-6.25%",
+    "status": "Efficient"
+  },
+  {
+    "transaction_id": "TXN-010",
+    "cost_center": "CC-010",
+    "budget_allocated": 24000000,
+    "actual_spending": 21000000,
+    "variance": "-3000000.00",
+    "comparison": "Under Budget",
+    "percentage_difference": "-12.50%",
+    "status": "Efficient"
+  },
+  {
+    "transaction_id": "TXN-011",
+    "cost_center": "CC-011",
+    "budget_allocated": 19000000,
+    "actual_spending": 17000000,
+    "variance": "-2000000.00",
+    "comparison": "Under Budget",
+    "percentage_difference": "-10.53%",
+    "status": "Efficient"
+  },
+  {
+    "transaction_id": "TXN-012",
+    "cost_center": "CC-012",
+    "budget_allocated": 17000000,
+    "actual_spending": 16000000,
+    "variance": "-1000000.00",
+    "comparison": "Under Budget",
+    "percentage_difference": "-5.88%",
+    "status": "Efficient"
+  },
+  {
+    "transaction_id": "TXN-013",
+    "cost_center": "CC-013",
+    "budget_allocated": 14000000,
+    "actual_spending": 13000000,
+    "variance": "-1000000.00",
+    "comparison": "Under Budget",
+    "percentage_difference": "-7.14%",
+    "status": "Efficient"
+  },
+  {
+    "transaction_id": "TXN-014",
+    "cost_center": "CC-014",
+    "budget_allocated": 17000000,
+    "actual_spending": 15500000,
+    "variance": "-1500000.00",
+    "comparison": "Under Budget",
+    "percentage_difference": "-8.82%",
+    "status": "Efficient"
+  },
+  {
+    "transaction_id": "TXN-015",
+    "cost_center": "CC-015",
+    "budget_allocated": 26000000,
+    "actual_spending": 24000000,
+    "variance": "-2000000.00",
+    "comparison": "Under Budget",
+    "percentage_difference": "-7.69%",
+    "status": "Efficient"
+  },
+  {
+    "transaction_id": "TXN-016",
+    "cost_center": "CC-016",
+    "budget_allocated": 21000000,
+    "actual_spending": 19000000,
+    "variance": "-2000000.00",
+    "comparison": "Under Budget",
+    "percentage_difference": "-9.52%",
+    "status": "Efficient"
+  },
+  {
+    "transaction_id": "TXN-017",
+    "cost_center": "CC-017",
+    "budget_allocated": 19000000,
+    "actual_spending": 17000000,
+    "variance": "-2000000.00",
+    "comparison": "Under Budget",
+    "percentage_difference": "-10.53%",
+    "status": "Efficient"
+  },
+  {
+    "transaction_id": "TXN-018",
+    "cost_center": "CC-018",
+    "budget_allocated": 13000000,
+    "actual_spending": 12000000,
+    "variance": "-1000000.00",
+    "comparison": "Under Budget",
+    "percentage_difference": "-7.69%",
+    "status": "Efficient"
+  },
+  {
+    "transaction_id": "TXN-019",
+    "cost_center": "CC-019",
+    "budget_allocated": 18000000,
+    "actual_spending": 17000000,
+    "variance": "-1000000.00",
+    "comparison": "Under Budget",
+    "percentage_difference": "-5.56%",
+    "status": "Efficient"
+  },
+  {
+    "transaction_id": "TXN-020",
+    "cost_center": "CC-020",
+    "budget_allocated": 25000000,
+    "actual_spending": 23000000,
+    "variance": "-2000000.00",
+    "comparison": "Under Budget",
+    "percentage_difference": "-8.00%",
+    "status": "Efficient"
+  },
+  {
+    "transaction_id": "TXN-021",
+    "cost_center": "CC-021",
+    "budget_allocated": 23000000,
+    "actual_spending": 21000000,
+    "variance": "-2000000.00",
+    "comparison": "Under Budget",
+    "percentage_difference": "-8.70%",
+    "status": "Efficient"
+  },
+  {
+    "transaction_id": "TXN-022",
+    "cost_center": "CC-022",
+    "budget_allocated": 15000000,
+    "actual_spending": 14000000,
+    "variance": "-1000000.00",
+    "comparison": "Under Budget",
+    "percentage_difference": "-6.67%",
+    "status": "Efficient"
+  },
+  {
+    "transaction_id": "TXN-023",
+    "cost_center": "CC-023",
+    "budget_allocated": 18000000,
+    "actual_spending": 16000000,
+    "variance": "-2000000.00",
+    "comparison": "Under Budget",
+    "percentage_difference": "-11.11%",
+    "status": "Efficient"
+  },
+  {
+    "transaction_id": "TXN-024",
+    "cost_center": "CC-024",
+    "budget_allocated": 11000000,
+    "actual_spending": 10000000,
+    "variance": "-1000000.00",
+    "comparison": "Under Budget",
+    "percentage_difference": "-9.09%",
+    "status": "Efficient"
+  },
+  {
+    "transaction_id": "TXN-025",
+    "cost_center": "CC-025",
+    "budget_allocated": 26000000,
+    "actual_spending": 24000000,
+    "variance": "-2000000.00",
+    "comparison": "Under Budget",
+    "percentage_difference": "-7.69%",
+    "status": "Efficient"
+  },
+  {
+    "transaction_id": "TXN-026",
+    "cost_center": "CC-026",
+    "budget_allocated": 20000000,
+    "actual_spending": 18000000,
+    "variance": "-2000000.00",
+    "comparison": "Under Budget",
+    "percentage_difference": "-10.00%",
+    "status": "Efficient"
+  },
+  {
+    "transaction_id": "TXN-027",
+    "cost_center": "CC-027",
+    "budget_allocated": 17000000,
+    "actual_spending": 16000000,
+    "variance": "-1000000.00",
+    "comparison": "Under Budget",
+    "percentage_difference": "-5.88%",
+    "status": "Efficient"
+  },
+  {
+    "transaction_id": "TXN-028",
+    "cost_center": "CC-028",
+    "budget_allocated": 19000000,
+    "actual_spending": 17000000,
+    "variance": "-2000000.00",
+    "comparison": "Under Budget",
+    "percentage_difference": "-10.53%",
+    "status": "Efficient"
+  },
+  {
+    "transaction_id": "TXN-029",
+    "cost_center": "CC-029",
+    "budget_allocated": 14000000,
+    "actual_spending": 13000000,
+    "variance": "-1000000.00",
+    "comparison": "Under Budget",
+    "percentage_difference": "-7.14%",
+    "status": "Efficient"
+  },
+  {
+    "transaction_id": "TXN-030",
+    "cost_center": "CC-030",
+    "budget_allocated": 25000000,
+    "actual_spending": 23000000,
+    "variance": "-2000000.00",
+    "comparison": "Under Budget",
+    "percentage_difference": "-8.00%",
+    "status": "Efficient"
+  },
+  {
+    "transaction_id": "TXN-031",
+    "cost_center": "CC-031",
+    "budget_allocated": 21000000,
+    "actual_spending": 19000000,
+    "variance": "-2000000.00",
+    "comparison": "Under Budget",
+    "percentage_difference": "-9.52%",
+    "status": "Efficient"
+  },
+  {
+    "transaction_id": "TXN-032",
+    "cost_center": "CC-032",
+    "budget_allocated": 15000000,
+    "actual_spending": 14000000,
+    "variance": "-1000000.00",
+    "comparison": "Under Budget",
+    "percentage_difference": "-6.67%",
+    "status": "Efficient"
+  },
+  {
+    "transaction_id": "TXN-033",
+    "cost_center": "CC-033",
+    "budget_allocated": 18000000,
+    "actual_spending": 17000000,
+    "variance": "-1000000.00",
+    "comparison": "Under Budget",
+    "percentage_difference": "-5.56%",
+    "status": "Efficient"
+  },
+  {
+    "transaction_id": "TXN-034",
+    "cost_center": "CC-034",
+    "budget_allocated": 12000000,
+    "actual_spending": 11000000,
+    "variance": "-1000000.00",
+    "comparison": "Under Budget",
+    "percentage_difference": "-8.33%",
+    "status": "Efficient"
+  },
+  {
+    "transaction_id": "TXN-035",
+    "cost_center": "CC-035",
+    "budget_allocated": 24000000,
+    "actual_spending": 22000000,
+    "variance": "-2000000.00",
+    "comparison": "Under Budget",
+    "percentage_difference": "-8.33%",
+    "status": "Efficient"
+  },
+  {
+    "transaction_id": "TXN-036",
+    "cost_center": "CC-036",
+    "budget_allocated": 20000000,
+    "actual_spending": 18000000,
+    "variance": "-2000000.00",
+    "comparison": "Under Budget",
+    "percentage_difference": "-10.00%",
+    "status": "Efficient"
+  },
+  {
+    "transaction_id": "TXN-037",
+    "cost_center": "CC-037",
+    "budget_allocated": 17000000,
+    "actual_spending": 16000000,
+    "variance": "-1000000.00",
+    "comparison": "Under Budget",
+    "percentage_difference": "-5.88%",
+    "status": "Efficient"
+  },
+  {
+    "transaction_id": "TXN-038",
+    "cost_center": "CC-038",
+    "budget_allocated": 19000000,
+    "actual_spending": 17000000,
+    "variance": "-2000000.00",
+    "comparison": "Under Budget",
+    "percentage_difference": "-10.53%",
+    "status": "Efficient"
+  },
+  {
+    "transaction_id": "TXN-039",
+    "cost_center": "CC-039",
+    "budget_allocated": 14000000,
+    "actual_spending": 13000000,
+    "variance": "-1000000.00",
+    "comparison": "Under Budget",
+    "percentage_difference": "-7.14%",
+    "status": "Efficient"
+  },
+  {
+    "transaction_id": "TXN-040",
+    "cost_center": "CC-040",
+    "budget_allocated": 25000000,
+    "actual_spending": 23000000,
+    "variance": "-2000000.00",
+    "comparison": "Under Budget",
+    "percentage_difference": "-8.00%",
+    "status": "Efficient"
+  },
+  {
+    "transaction_id": "TXN-041",
+    "cost_center": "CC-041",
+    "budget_allocated": 21000000,
+    "actual_spending": 19000000,
+    "variance": "-2000000.00",
+    "comparison": "Under Budget",
+    "percentage_difference": "-9.52%",
+    "status": "Efficient"
+  },
+  {
+    "transaction_id": "TXN-042",
+    "cost_center": "CC-042",
+    "budget_allocated": 15000000,
+    "actual_spending": 14000000,
+    "variance": "-1000000.00",
+    "comparison": "Under Budget",
+    "percentage_difference": "-6.67%",
+    "status": "Efficient"
+  },
+  {
+    "transaction_id": "TXN-043",
+    "cost_center": "CC-043",
+    "budget_allocated": 18000000,
+    "actual_spending": 17000000,
+    "variance": "-1000000.00",
+    "comparison": "Under Budget",
+    "percentage_difference": "-5.56%",
+    "status": "Efficient"
+  },
+  {
+    "transaction_id": "TXN-044",
+    "cost_center": "CC-044",
+    "budget_allocated": 12000000,
+    "actual_spending": 11000000,
+    "variance": "-1000000.00",
+    "comparison": "Under Budget",
+    "percentage_difference": "-8.33%",
+    "status": "Efficient"
+  },
+  {
+    "transaction_id": "TXN-045",
+    "cost_center": "CC-045",
+    "budget_allocated": 24000000,
+    "actual_spending": 22000000,
+    "variance": "-2000000.00",
+    "comparison": "Under Budget",
+    "percentage_difference": "-8.33%",
+    "status": "Efficient"
+  },
+  {
+    "transaction_id": "TXN-046",
+    "cost_center": "CC-046",
+    "budget_allocated": 20000000,
+    "actual_spending": 18000000,
+    "variance": "-2000000.00",
+    "comparison": "Under Budget",
+    "percentage_difference": "-10.00%",
+    "status": "Efficient"
+  },
+  {
+    "transaction_id": "TXN-047",
+    "cost_center": "CC-047",
+    "budget_allocated": 17000000,
+    "actual_spending": 16000000,
+    "variance": "-1000000.00",
+    "comparison": "Under Budget",
+    "percentage_difference": "-5.88%",
+    "status": "Efficient"
+  },
+  {
+    "transaction_id": "TXN-048",
+    "cost_center": "CC-048",
+    "budget_allocated": 19000000,
+    "actual_spending": 17000000,
+    "variance": "-2000000.00",
+    "comparison": "Under Budget",
+    "percentage_difference": "-10.53%",
+    "status": "Efficient"
+  },
+  {
+    "transaction_id": "TXN-049",
+    "cost_center": "CC-049",
+    "budget_allocated": 14000000,
+    "actual_spending": 13000000,
+    "variance": "-1000000.00",
+    "comparison": "Under Budget",
+    "percentage_difference": "-7.14%",
+    "status": "Efficient"
+  },
+  {
+    "transaction_id": "TXN-050",
+    "cost_center": "CC-050",
+    "budget_allocated": 25000000,
+    "actual_spending": 23000000,
+    "variance": "-2000000.00",
+    "comparison": "Under Budget",
+    "percentage_difference": "-8.00%",
+    "status": "Efficient"
+  },
+  {
+    "year_month": "2025-01",
+    "total_budget_allocated": 91000000,
+    "total_actual_spending": 84000000,
+    "variance": "-7000000.00",
+    "percentage_difference": "-7.69%",
+    "status": "Efficient",
+    "transactions": {
+      "TXN-001": {
+        "cost_center": "CC-001",
+        "budget_allocated": 20000000,
+        "actual_spending": 18000000
+      },
+      "TXN-013": {
+        "cost_center": "CC-013",
+        "budget_allocated": 14000000,
+        "actual_spending": 13000000
+      },
+      "TXN-025": {
+        "cost_center": "CC-025",
+        "budget_allocated": 26000000,
+        "actual_spending": 24000000
+      },
+      "TXN-037": {
+        "cost_center": "CC-037",
+        "budget_allocated": 17000000,
+        "actual_spending": 16000000
+      },
+      "TXN-049": {
+        "cost_center": "CC-049",
+        "budget_allocated": 14000000,
+        "actual_spending": 13000000
+      }
+    }
+  },
+  {
+    "year_month": "2025-02",
+    "total_budget_allocated": 96000000,
+    "total_actual_spending": 87500000,
+    "variance": "-8500000.00",
+    "percentage_difference": "-8.85%",
+    "status": "Efficient",
+    "transactions": {
+      "TXN-002": {
+        "cost_center": "CC-002",
+        "budget_allocated": 15000000,
+        "actual_spending": 14000000
+      },
+      "TXN-014": {
+        "cost_center": "CC-014",
+        "budget_allocated": 17000000,
+        "actual_spending": 15500000
+      },
+      "TXN-026": {
+        "cost_center": "CC-026",
+        "budget_allocated": 20000000,
+        "actual_spending": 18000000
+      },
+      "TXN-038": {
+        "cost_center": "CC-038",
+        "budget_allocated": 19000000,
+        "actual_spending": 17000000
+      },
+      "TXN-050": {
+        "cost_center": "CC-050",
+        "budget_allocated": 25000000,
+        "actual_spending": 23000000
+      }
+    }
+  },
+  {
+    "year_month": "2025-03",
+    "total_budget_allocated": 75000000,
+    "total_actual_spending": 69000000,
+    "variance": "-6000000.00",
+    "percentage_difference": "-8.00%",
+    "status": "Efficient",
+    "transactions": {
+      "TXN-003": {
+        "cost_center": "CC-003",
+        "budget_allocated": 18000000,
+        "actual_spending": 16000000
+      },
+      "TXN-015": {
+        "cost_center": "CC-015",
+        "budget_allocated": 26000000,
+        "actual_spending": 24000000
+      },
+      "TXN-027": {
+        "cost_center": "CC-027",
+        "budget_allocated": 17000000,
+        "actual_spending": 16000000
+      },
+      "TXN-039": {
+        "cost_center": "CC-039",
+        "budget_allocated": 14000000,
+        "actual_spending": 13000000
+      }
+    }
+  },
+  {
+    "year_month": "2025-04",
+    "total_budget_allocated": 77000000,
+    "total_actual_spending": 70000000,
+    "variance": "-7000000.00",
+    "percentage_difference": "-9.09%",
+    "status": "Efficient",
+    "transactions": {
+      "TXN-004": {
+        "cost_center": "CC-004",
+        "budget_allocated": 12000000,
+        "actual_spending": 11000000
+      },
+      "TXN-016": {
+        "cost_center": "CC-016",
+        "budget_allocated": 21000000,
+        "actual_spending": 19000000
+      },
+      "TXN-028": {
+        "cost_center": "CC-028",
+        "budget_allocated": 19000000,
+        "actual_spending": 17000000
+      },
+      "TXN-040": {
+        "cost_center": "CC-040",
+        "budget_allocated": 25000000,
+        "actual_spending": 23000000
+      }
+    }
+  },
+  {
+    "year_month": "2025-05",
+    "total_budget_allocated": 79000000,
+    "total_actual_spending": 72000000,
+    "variance": "-7000000.00",
+    "percentage_difference": "-8.86%",
+    "status": "Efficient",
+    "transactions": {
+      "TXN-005": {
+        "cost_center": "CC-005",
+        "budget_allocated": 25000000,
+        "actual_spending": 23000000
+      },
+      "TXN-017": {
+        "cost_center": "CC-017",
+        "budget_allocated": 19000000,
+        "actual_spending": 17000000
+      },
+      "TXN-029": {
+        "cost_center": "CC-029",
+        "budget_allocated": 14000000,
+        "actual_spending": 13000000
+      },
+      "TXN-041": {
+        "cost_center": "CC-041",
+        "budget_allocated": 21000000,
+        "actual_spending": 19000000
+      }
+    }
+  },
+  {
+    "year_month": "2025-06",
+    "total_budget_allocated": 71000000,
+    "total_actual_spending": 64000000,
+    "variance": "-7000000.00",
+    "percentage_difference": "-9.86%",
+    "status": "Efficient",
+    "transactions": {
+      "TXN-006": {
+        "cost_center": "CC-006",
+        "budget_allocated": 18000000,
+        "actual_spending": 15000000
+      },
+      "TXN-018": {
+        "cost_center": "CC-018",
+        "budget_allocated": 13000000,
+        "actual_spending": 12000000
+      },
+      "TXN-030": {
+        "cost_center": "CC-030",
+        "budget_allocated": 25000000,
+        "actual_spending": 23000000
+      },
+      "TXN-042": {
+        "cost_center": "CC-042",
+        "budget_allocated": 15000000,
+        "actual_spending": 14000000
+      }
+    }
+  },
+  {
+    "year_month": "2025-07",
+    "total_budget_allocated": 77000000,
+    "total_actual_spending": 72000000,
+    "variance": "-5000000.00",
+    "percentage_difference": "-6.49%",
+    "status": "Efficient",
+    "transactions": {
+      "TXN-007": {
+        "cost_center": "CC-007",
+        "budget_allocated": 20000000,
+        "actual_spending": 19000000
+      },
+      "TXN-019": {
+        "cost_center": "CC-019",
+        "budget_allocated": 18000000,
+        "actual_spending": 17000000
+      },
+      "TXN-031": {
+        "cost_center": "CC-031",
+        "budget_allocated": 21000000,
+        "actual_spending": 19000000
+      },
+      "TXN-043": {
+        "cost_center": "CC-043",
+        "budget_allocated": 18000000,
+        "actual_spending": 17000000
+      }
+    }
+  },
+  {
+    "year_month": "2025-08",
+    "total_budget_allocated": 67000000,
+    "total_actual_spending": 62000000,
+    "variance": "-5000000.00",
+    "percentage_difference": "-7.46%",
+    "status": "Efficient",
+    "transactions": {
+      "TXN-008": {
+        "cost_center": "CC-008",
+        "budget_allocated": 15000000,
+        "actual_spending": 14000000
+      },
+      "TXN-020": {
+        "cost_center": "CC-020",
+        "budget_allocated": 25000000,
+        "actual_spending": 23000000
+      },
+      "TXN-032": {
+        "cost_center": "CC-032",
+        "budget_allocated": 15000000,
+        "actual_spending": 14000000
+      },
+      "TXN-044": {
+        "cost_center": "CC-044",
+        "budget_allocated": 12000000,
+        "actual_spending": 11000000
+      }
+    }
+  },
+  {
+    "year_month": "2025-09",
+    "total_budget_allocated": 81000000,
+    "total_actual_spending": 75000000,
+    "variance": "-6000000.00",
+    "percentage_difference": "-7.41%",
+    "status": "Efficient",
+    "transactions": {
+      "TXN-009": {
+        "cost_center": "CC-009",
+        "budget_allocated": 16000000,
+        "actual_spending": 15000000
+      },
+      "TXN-021": {
+        "cost_center": "CC-021",
+        "budget_allocated": 23000000,
+        "actual_spending": 21000000
+      },
+      "TXN-033": {
+        "cost_center": "CC-033",
+        "budget_allocated": 18000000,
+        "actual_spending": 17000000
+      },
+      "TXN-045": {
+        "cost_center": "CC-045",
+        "budget_allocated": 24000000,
+        "actual_spending": 22000000
+      }
+    }
+  },
+  {
+    "year_month": "2025-10",
+    "total_budget_allocated": 71000000,
+    "total_actual_spending": 64000000,
+    "variance": "-7000000.00",
+    "percentage_difference": "-9.86%",
+    "status": "Efficient",
+    "transactions": {
+      "TXN-010": {
+        "cost_center": "CC-010",
+        "budget_allocated": 24000000,
+        "actual_spending": 21000000
+      },
+      "TXN-022": {
+        "cost_center": "CC-022",
+        "budget_allocated": 15000000,
+        "actual_spending": 14000000
+      },
+      "TXN-034": {
+        "cost_center": "CC-034",
+        "budget_allocated": 12000000,
+        "actual_spending": 11000000
+      },
+      "TXN-046": {
+        "cost_center": "CC-046",
+        "budget_allocated": 20000000,
+        "actual_spending": 18000000
+      }
+    }
+  },
+  {
+    "year_month": "2025-11",
+    "total_budget_allocated": 78000000,
+    "total_actual_spending": 71000000,
+    "variance": "-7000000.00",
+    "percentage_difference": "-8.97%",
+    "status": "Efficient",
+    "transactions": {
+      "TXN-011": {
+        "cost_center": "CC-011",
+        "budget_allocated": 19000000,
+        "actual_spending": 17000000
+      },
+      "TXN-023": {
+        "cost_center": "CC-023",
+        "budget_allocated": 18000000,
+        "actual_spending": 16000000
+      },
+      "TXN-035": {
+        "cost_center": "CC-035",
+        "budget_allocated": 24000000,
+        "actual_spending": 22000000
+      },
+      "TXN-047": {
+        "cost_center": "CC-047",
+        "budget_allocated": 17000000,
+        "actual_spending": 16000000
+      }
+    }
+  },
+  {
+    "year_month": "2025-12",
+    "total_budget_allocated": 67000000,
+    "total_actual_spending": 61000000,
+    "variance": "-6000000.00",
+    "percentage_difference": "-8.96%",
+    "status": "Efficient",
+    "transactions": {
+      "TXN-012": {
+        "cost_center": "CC-012",
+        "budget_allocated": 17000000,
+        "actual_spending": 16000000
+      },
+      "TXN-024": {
+        "cost_center": "CC-024",
+        "budget_allocated": 11000000,
+        "actual_spending": 10000000
+      },
+      "TXN-036": {
+        "cost_center": "CC-036",
+        "budget_allocated": 20000000,
+        "actual_spending": 18000000
+      },
+      "TXN-048": {
+        "cost_center": "CC-048",
+        "budget_allocated": 19000000,
+        "actual_spending": 17000000
+      }
+    }
+  }
+]
